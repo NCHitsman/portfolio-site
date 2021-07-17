@@ -55,44 +55,6 @@
     color: #62bcb9;
 }
 
-.ButtonCont {
-    position: fixed;
-    z-index: 3;
-    max-height: 7vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 7.5px;
-}
-
-.DownButton {
-    font-size: 100px;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    font-family: Staatliches;
-    height: 40vh;
-    border: none;
-    border-radius: 5px;
-}
-.DownButton:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.DownButtonText {
-    color: white;
-    opacity: 1;
-}
-
-.ButtonCont.Top {
-    top: 0;
-    transform: rotate(90deg) scaleX(1);
-}
-
-.ButtonCont.Bottom {
-    bottom: 0;
-    transform: rotate(90deg) scaleX(1);
-}
-
 .ProjectPageContainer {
     height: 100vh;
     display: flex;
@@ -107,11 +69,48 @@
 .ProjectContainer {
     height: 80vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
     max-width: 80%;
     min-width: 80%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     padding: 1%;
+    flex-wrap: wrap;
+}
+
+.ProjectHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 40%;
+    max-width: 40%;
+    max-height: 30vh;
+    min-height: 30vh;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.ProjectTitle {
+    color: white;
+    font-family: Staatliches;
+    font-size: 40px;
+}
+
+.ProjectLinkCont {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+}
+
+.ProjectLink {
+    color: white;
+    text-decoration: underline;
+    font-family: Staatliches;
+    font-size: 28px;
+}
+
+.ProjectLink:hover {
+    color: #62bcb9;
 }
