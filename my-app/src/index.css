@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Staatliches&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    height: 100%;
+}
+
+.PageContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
