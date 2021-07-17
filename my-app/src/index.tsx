@@ -10,3 +10,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+// Plans: Make a button to turn camera around and display sites
