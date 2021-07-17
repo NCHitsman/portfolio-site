@@ -151,25 +151,37 @@ const MountPlane = () => {
     );
 };
 
-const CameraMove = () => {
+const CameraMove = ({ down }: { down: boolean }) => {
     let dir = "up";
     useFrame((state) => {
-        if (state.camera.rotation.x > -0.32) {
-            dir = "down";
-        } else if (state.camera.rotation.x < -0.45) {
-            dir = "up";
-        }
+        console.log(down);
+        if (down) {
+            if (state.camera.rotation.x > -1.58) {
+                state.camera.rotation.x -= 0.01;
+            }
+        } else {
+            if (state.camera.rotation.x < -0.45) {
+                state.camera.rotation.x += 0.01;
+            } else {
+                if (state.camera.rotation.x > -0.32) {
+                    dir = "down";
+                } else if (state.camera.rotation.x < -0.445) {
+                    dir = "up";
+                }
 
-        if (dir === "up") {
-            state.camera.rotation.x += 0.00005;
-        } else if (dir === "down") {
-            state.camera.rotation.x -= 0.00005;
+                if (dir === "up") {
+                    state.camera.rotation.x += 0.00005;
+                } else if (dir === "down") {
+                    state.camera.rotation.x -= 0.00005;
+                }
+            }
         }
+        console.log(state.camera.rotation.x);
     });
     return null;
 };
 
-const HomeCanvas = () => {
+const HomeCanvas = ({ down }: { down: boolean }) => {
     let offset = true;
 
     return (
@@ -192,7 +204,7 @@ const HomeCanvas = () => {
                 return <Mount key={a} x={i * 5 - 125} y={offset ? -65 : -70} />;
             })}
             <MountPlane />
-            <CameraMove />
+            <CameraMove down={down} />
         </Canvas>
     );
 };
