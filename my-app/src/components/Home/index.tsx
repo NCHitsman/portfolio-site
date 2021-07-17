@@ -1,6 +1,5 @@
 import HomeCanvas from "./HomeCanvas";
 import "./Home.css";
-import { useState } from "react";
 
 const Home = () => {
     return (
