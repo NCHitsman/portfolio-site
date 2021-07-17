@@ -4,7 +4,7 @@ import "./Home.css";
 const Home = () => {
     return (
         <div className="HomeDivParent">
-            <div className="HomeInfoCont">
+            {/* <div className="HomeInfoCont">
                 <div className="HomeName">Noah Carmichael-Hitsman</div>
                 <div className='HomeLinkCont'>
                     <div
@@ -26,7 +26,7 @@ const Home = () => {
                     LinkedIn
                     </div>
                 </div>
-            </div>
+            </div> */}
             <HomeCanvas />
         </div>
     );

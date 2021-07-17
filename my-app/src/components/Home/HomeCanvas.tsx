@@ -81,10 +81,10 @@ const Sun = () => {
 const Background = () => {
     return (
         <mesh position={[0, 25, -155]}>
-            <planeBufferGeometry args={[470, 55]} />
+            <planeBufferGeometry args={[575, 75]} />
             <meshBasicMaterial>
                 <GradientTexture
-                    stops={[0, 0.3, 0.5, 0.8, 1]}
+                    stops={[0, 0.3, 0.4, 0.8, 1]}
                     colors={[
                         "#2d9ee8",
                         "#a78ced",
@@ -143,16 +143,30 @@ const MountPlane = () => {
             <meshBasicMaterial>
                 <GradientTexture
                     stops={[0, 0.5, 1]}
-                    colors={[
-                        "black",
-                        'black',
-                        "#580360",
-                    ]}
+                    colors={["black", "black", "#580360"]}
                     size={1024}
                 />
             </meshBasicMaterial>
         </mesh>
     );
+};
+
+const CameraMove = () => {
+    let dir = "up";
+    useFrame((state) => {
+        if (state.camera.rotation.x > -0.32) {
+            dir = "down";
+        } else if (state.camera.rotation.x < -0.45) {
+            dir = "up";
+        }
+
+        if (dir === "up") {
+            state.camera.rotation.x += 0.00005;
+        } else if (dir === "down") {
+            state.camera.rotation.x -= 0.00005;
+        }
+    });
+    return null;
 };
 
 const HomeCanvas = () => {
@@ -170,14 +184,15 @@ const HomeCanvas = () => {
         >
             <Grid />
             <Background />
-            {/* <OrbitControls /> */}
             <Plane />
             <Sun />
+            {/* <OrbitControls /> */}
             {range(50).map((a, i) => {
                 offset ? (offset = false) : (offset = true);
-                return <Mount x={i * 5 - 125} y={offset ? -65 : -70} />;
+                return <Mount key={a} x={i * 5 - 125} y={offset ? -65 : -70} />;
             })}
             <MountPlane />
+            <CameraMove />
         </Canvas>
     );
 };

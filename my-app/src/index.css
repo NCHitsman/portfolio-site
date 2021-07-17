@@ -6,7 +6,7 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100vh;
 }
 
 body {
@@ -14,13 +14,13 @@ body {
 }
 
 #root {
-    height: 100%;
+    min-height: 100vh;
 }
 
 .PageContent {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
     position: relative;
 }
