@@ -1,9 +1,10 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GradientTexture } from "@react-three/drei";
+import { GradientTexture, OrbitControls, Text } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
 import { GridHelper, Mesh } from "three";
 import { range } from "lodash";
+import { memo } from "react";
 
 const speed = 0.05;
 
@@ -186,6 +187,7 @@ const HomeCanvas = () => {
             <Background />
             <Plane />
             <Sun />
+            {/* <OrbitControls /> */}
             {range(50).map((a, i) => {
                 offset ? (offset = false) : (offset = true);
                 return <Mount key={a} x={i * 5 - 125} y={offset ? -65 : -70} />;
@@ -196,4 +198,4 @@ const HomeCanvas = () => {
     );
 };
 
-export default HomeCanvas;
+export default memo(HomeCanvas, (prevProps, nextProps) => true);

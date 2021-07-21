@@ -114,3 +114,64 @@
 .ProjectLink:hover {
     color: #62bcb9;
 }
+
+.ButtonCont {
+    position: fixed;
+    z-index: 3;
+    max-height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7.5px;
+}
+
+.DownButton {
+    font-size: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: Staatliches;
+    height: 40vh;
+    border: none;
+    border-radius: 5px;
+}
+.DownButton:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.DownButtonText {
+    color: white;
+    opacity: 1;
+}
+
+.ButtonCont.Top {
+    top: 0;
+    transform: rotate(90deg) scaleX(1);
+}
+
+.ButtonCont.Bottom {
+    bottom: 0;
+    transform: rotate(90deg) scaleX(1);
+}
+
+.ProjectPageContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.ProjectContainer {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    min-width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 1%;
+}

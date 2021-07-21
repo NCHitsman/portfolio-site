@@ -1,7 +1,10 @@
 import HomeCanvas from "./HomeCanvas";
 import "./Home.css";
+import { useState } from "react";
 
 const Home = () => {
+    const [down, setDown] = useState(false);
+
     return (
         <div className="HomeDivParent">
             <div className="HomeInfoCont">
@@ -27,7 +30,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-{/*
+            {/*
             <div className="ProjectPageContainer">
                 <div className="ProjectContainer">
                     <div className="ProjectHolder">
@@ -63,6 +66,16 @@ const Home = () => {
                 </div>
             </div> */}
 
+            <div className={down ? "ButtonCont Top" : "ButtonCont Bottom"}>
+                <button
+                    className="DownButton"
+                    onClick={() => {
+                        down ? setDown(false) : setDown(true);
+                    }}
+                >
+                    <div className="DownButtonText">{down ? "<" : ">"}</div>
+                </button>
+            </div>
             <HomeCanvas />
         </div>
     );
