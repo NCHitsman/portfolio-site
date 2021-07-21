@@ -24,3 +24,48 @@ body {
     min-height: 100vh;
     position: relative;
 }
+
+.DownButtonCont {
+    position: fixed;
+    z-index: 6;
+    max-height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7.5px;
+    bottom: 0;
+    transform: rotate(90deg) scaleX(1);
+}
+
+.UpButtonCont {
+    position: fixed;
+    z-index: 6;
+    max-height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7.5px;
+    top: 0;
+    transform: rotate(90deg) scaleX(1);
+}
+
+.ChangeButton {
+    font-size: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: Staatliches;
+    height: 40vh;
+    border: none;
+    border-radius: 5px;
+}
+
+.ChangeButton:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.ButtonText {
+    color: white;
+    opacity: 1;
+}
