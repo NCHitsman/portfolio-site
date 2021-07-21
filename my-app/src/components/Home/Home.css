@@ -13,6 +13,44 @@
     overflow: hidden;
     background-color: black;
     min-height: 100vh;
+    min-width: 100%;
+}
+
+.HomeCanvas.center {
+    min-height: 100vh;
+    min-width: 100%;
+    animation-name: slidedown;
+    animation-duration: 2s;
+}
+
+.HomeCanvas.raise {
+    min-width: 100%;
+    min-height: 0vh;
+    max-height: 0vh;
+    animation-name: slideup;
+    animation-duration: 2s;
+}
+
+@keyframes slideup {
+    from {
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+    to {
+        min-height: 0vh;
+        max-height: 0vh;
+    }
+}
+
+@keyframes slidedown {
+    from {
+        min-height: 0vh;
+        max-height: 0vh;
+    }
+    to {
+        min-height: 100vh;
+        max-height: 100vh;
+    }
 }
 
 .HomeInfoCont {
@@ -47,7 +85,7 @@
     font-family: Staatliches;
     cursor: pointer;
     /* text-decoration: underline; */
-    color: #edece8;
+    color: white;
 }
 
 .HomeLink:hover {

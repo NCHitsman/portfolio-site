@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GradientTexture, OrbitControls, Text } from "@react-three/drei";
+import { GradientTexture } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
 import { GridHelper, Mesh } from "three";
@@ -100,7 +100,7 @@ const Background = () => {
     );
 };
 
-const Mount = ({ x, y }: { x: number; y: number }) => {
+const Mount = memo(({ x, y }: { x: number; y: number }) => {
     const rotX = Math.random();
     const rotZ = Math.random();
     const arg = Math.ceil(Math.random() * 2);
@@ -135,7 +135,7 @@ const Mount = ({ x, y }: { x: number; y: number }) => {
             </mesh>
         </>
     );
-};
+}, (prevProps, nextProps) => true)
 
 const MountPlane = () => {
     return (
@@ -170,12 +170,12 @@ const CameraMove = () => {
     return null;
 };
 
-const HomeCanvas = () => {
+const HomeCanvas = ({down}: {down: boolean | null}) => {
     let offset = true;
 
     return (
         <Canvas
-            className="HomeCanvas"
+            className={down == null ? 'HomeCanvas' : down ? 'HomeCanvas raise' : 'HomeCanvas center'}
             camera={{
                 fov: 75,
                 near: 0.1,
@@ -198,4 +198,4 @@ const HomeCanvas = () => {
     );
 };
 
-export default memo(HomeCanvas, (prevProps, nextProps) => true);
+export default HomeCanvas;

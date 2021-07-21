@@ -3,7 +3,7 @@ import "./Home.css";
 import { useState } from "react";
 
 const Home = () => {
-    const [down, setDown] = useState(false);
+    const [down, setDown] = useState<boolean | null>(null);
 
     return (
         <div className="HomeDivParent">
@@ -76,7 +76,7 @@ const Home = () => {
                     <div className="DownButtonText">{down ? "<" : ">"}</div>
                 </button>
             </div>
-            <HomeCanvas />
+            <HomeCanvas down={down} />
         </div>
     );
 };
