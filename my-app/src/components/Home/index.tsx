@@ -1,13 +1,17 @@
 import HomeCanvas from "./HomeCanvas";
 import "./Home.css";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-const Home = () => {
-    const [down, setDown] = useState<boolean | null>(null);
+interface props {
+    home: boolean;
+    setHome: Dispatch<SetStateAction<boolean>>;
+    setAbout: Dispatch<SetStateAction<boolean>>
+}
 
+const Home = ({ home, setHome, setAbout }: props) => {
     return (
         <div className="HomeDivParent">
-            <div className="HomeInfoCont">
+            <div className={"HomeInfoCont"}>
                 <div className="HomeName">Noah Carmichael-Hitsman</div>
                 <div className="HomeLinkCont">
                     <div
@@ -30,53 +34,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            {/*
-            <div className="ProjectPageContainer">
-                <div className="ProjectContainer">
-                    <div className="ProjectHolder">
-                        <div className="ProjectTitle">Planetary Empires</div>
-                        <div className="ProjectLinkCont">
-                            <div
-                                className="ProjectLink"
-                                onClick={() => {
-                                    window.open(
-                                        "https://planetary-empires.herokuapp.com/"
-                                    );
-                                }}
-                            >
-                                Livesite
-                            </div>
-                            <div
-                                className="ProjectLink"
-                                onClick={() => {
-                                    window.open(
-                                        "https://github.com/NCHitsman/Planetary-Empires"
-                                    );
-                                }}
-                            >
-                                Github
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ProjectHolder">
-                        <div className="ProjectTitle">SoundLoud</div>
-                    </div>
-                    <div className="ProjectHolder"></div>
-                    <div className="ProjectHolder"></div>
-                </div>
-            </div> */}
 
-            <div className={down ? "ButtonCont Top" : "ButtonCont Bottom"}>
+            <HomeCanvas home={home} />
+
+            <div className={"ButtonCont"}>
                 <button
                     className="DownButton"
                     onClick={() => {
-                        down ? setDown(false) : setDown(true);
+                        setHome(false)
+                        setAbout(true)
                     }}
                 >
-                    <div className="DownButtonText">{down ? "<" : ">"}</div>
+                    <div className="DownButtonText">{'>'}</div>
                 </button>
             </div>
-            <HomeCanvas down={down} />
         </div>
     );
 };

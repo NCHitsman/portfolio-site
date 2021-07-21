@@ -3,54 +3,19 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    position: fixed;
+    z-index: 0;
 }
 
 .HomeCanvas {
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     top: 0;
     left: 0;
     overflow: hidden;
     background-color: black;
     min-height: 100vh;
     min-width: 100%;
-}
-
-.HomeCanvas.center {
-    min-height: 100vh;
-    min-width: 100%;
-    animation-name: slidedown;
-    animation-duration: 2s;
-}
-
-.HomeCanvas.raise {
-    min-width: 100%;
-    min-height: 0vh;
-    max-height: 0vh;
-    animation-name: slideup;
-    animation-duration: 2s;
-}
-
-@keyframes slideup {
-    from {
-        min-height: 100vh;
-        max-height: 100vh;
-    }
-    to {
-        min-height: 0vh;
-        max-height: 0vh;
-    }
-}
-
-@keyframes slidedown {
-    from {
-        min-height: 0vh;
-        max-height: 0vh;
-    }
-    to {
-        min-height: 100vh;
-        max-height: 100vh;
-    }
 }
 
 .HomeInfoCont {
@@ -61,7 +26,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
 }
 
 .HomeName {
@@ -93,69 +58,9 @@
     color: #62bcb9;
 }
 
-.ProjectPageContainer {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 3;
-    max-width: 100%;
-    min-width: 100%;
-}
-
-.ProjectContainer {
-    height: 80vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    max-width: 80%;
-    min-width: 80%;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    padding: 1%;
-    flex-wrap: wrap;
-}
-
-.ProjectHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 40%;
-    max-width: 40%;
-    max-height: 30vh;
-    min-height: 30vh;
-    background-color: black;
-    border-radius: 5px;
-}
-
-.ProjectTitle {
-    color: white;
-    font-family: Staatliches;
-    font-size: 40px;
-}
-
-.ProjectLinkCont {
-    display: flex;
-    width: 60%;
-    justify-content: space-evenly;
-}
-
-.ProjectLink {
-    color: white;
-    text-decoration: underline;
-    font-family: Staatliches;
-    font-size: 28px;
-}
-
-.ProjectLink:hover {
-    color: #62bcb9;
-}
-
 .ButtonCont {
     position: fixed;
-    z-index: 3;
+    z-index: 1;
     max-height: 7vh;
     width: 100%;
     display: flex;
@@ -181,35 +86,7 @@
     opacity: 1;
 }
 
-.ButtonCont.Top {
-    top: 0;
-    transform: rotate(90deg) scaleX(1);
-}
-
-.ButtonCont.Bottom {
+.ButtonCont {
     bottom: 0;
     transform: rotate(90deg) scaleX(1);
-}
-
-.ProjectPageContainer {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 3;
-    max-width: 100%;
-    min-width: 100%;
-}
-
-.ProjectContainer {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    min-width: 80%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    padding: 1%;
 }

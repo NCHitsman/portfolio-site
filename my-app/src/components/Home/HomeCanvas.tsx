@@ -170,12 +170,12 @@ const CameraMove = () => {
     return null;
 };
 
-const HomeCanvas = ({down}: {down: boolean | null}) => {
+const HomeCanvas = ({home}: {home: boolean}) => {
     let offset = true;
 
     return (
         <Canvas
-            className={down == null ? 'HomeCanvas' : down ? 'HomeCanvas raise' : 'HomeCanvas center'}
+            className={'HomeCanvas'}
             camera={{
                 fov: 75,
                 near: 0.1,
