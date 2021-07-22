@@ -22,15 +22,15 @@ const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => 
                         : "AboutMeParentCont unactive"
                 }
             >
-                
+
             </div>
             {about && !projects && (
-                <div className={"UpButtonCont about"}>
+                <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
-                            setHome(true);
-                            setAbout(false);
+                            setAbout(false)
+                            setHome(true)
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
@@ -38,7 +38,7 @@ const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => 
                 </div>
             )}
             {about && !projects && (
-                <div className={"DownButtonCont about"}>
+                <div className={"DownButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {

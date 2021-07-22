@@ -29,7 +29,6 @@ body {
     position: fixed;
     z-index: 6;
     max-height: 7vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +41,6 @@ body {
     position: fixed;
     z-index: 6;
     max-height: 7vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

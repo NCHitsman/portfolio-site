@@ -21,7 +21,7 @@ const Projects = ({ projects, setProjects }: props) => {
                 }
             ></div>
             {projects && (
-                <div className={"UpButtonCont about"}>
+                <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
