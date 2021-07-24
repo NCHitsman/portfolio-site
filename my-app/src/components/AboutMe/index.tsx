@@ -22,7 +22,9 @@ const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => 
                         : "AboutMeParentCont unactive"
                 }
             >
-
+                <div className='HomeName'>
+                    About Me
+                </div>
             </div>
             {about && !projects && (
                 <div className={"UpButtonCont"}>
