@@ -10,7 +10,11 @@
 
 ## About Page
 
+# Parent Div used Fixed Position at z-index of 3-4 to apear above the Home Page
+# All Elements are inside parent div.
 
 
 
 ## Project Page
+
+# Parent Div used Fixed Position at z-index of 6-7 to apear above the About Page
