@@ -19,7 +19,9 @@ const Projects = ({ projects, setProjects }: props) => {
                         ? "ProjectsParentCont active"
                         : "ProjectsParentCont unactive"
                 }
-            ></div>
+            >
+                <div className="HomeName">Projects</div>
+            </div>
             {projects && (
                 <div className={"UpButtonCont"}>
                     <button
