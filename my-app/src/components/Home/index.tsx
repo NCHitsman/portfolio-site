@@ -3,48 +3,55 @@ import "./Home.css";
 import { Dispatch, SetStateAction } from "react";
 
 interface props {
-    home: boolean;
-    setHome: Dispatch<SetStateAction<boolean>>;
+    home: boolean | null;
+    setHome: Dispatch<SetStateAction<boolean | null>>;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
+    setLastPage: Dispatch<SetStateAction<string>>;
 }
 
-const Home = ({ home, setHome, setAbout }: props) => {
+const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
     return (
         <>
-            <div className="HomeDivParent">
-                <div className={"HomeInfoCont"}>
-                    <div className="HomeName">Noah Carmichael-Hitsman</div>
-                    <div className="HomeLinkCont">
-                        <div
-                            className="HomeLink"
-                            onClick={() => {
-                                window.open("https://github.com/NCHitsman");
-                            }}
-                        >
-                            Github
-                        </div>
-                        <div
-                            className="HomeLink"
-                            onClick={() => {
-                                window.open(
-                                    "https://www.linkedin.com/in/noah-carmichael-hitsman-b024a1203/"
-                                );
-                            }}
-                        >
-                            LinkedIn
-                        </div>
+            <HomeCanvas home={home} />
+            <div
+                className={
+                    home === null
+                        ? "HomeContentCont"
+                        : home
+                        ? "HomeContentCont showCont"
+                        : "HomeContentCont hideCont"
+                }
+            >
+                <div className="HomeName">Noah Carmichael-Hitsman</div>
+                <div className="HomeLinkCont">
+                    <div
+                        className="HomeLink"
+                        onClick={() => {
+                            window.open("https://github.com/NCHitsman");
+                        }}
+                    >
+                        Github
+                    </div>
+                    <div
+                        className="HomeLink"
+                        onClick={() => {
+                            window.open(
+                                "https://www.linkedin.com/in/noah-carmichael-hitsman-b024a1203/"
+                            );
+                        }}
+                    >
+                        LinkedIn
                     </div>
                 </div>
-
-                <HomeCanvas home={home} />
             </div>
-            {home && (
+            {(home || home === null) && (
                 <div className={"DownButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
                             setHome(false);
                             setAbout(true);
+                            setLastPage("home");
                         }}
                     >
                         <div className="ButtonText">{">"}</div>

@@ -6,11 +6,19 @@ interface props {
     about: boolean | null;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
     setProjects: Dispatch<SetStateAction<boolean | null>>;
-    setHome: Dispatch<SetStateAction<boolean>>;
-    projects: boolean | null
+    setHome: Dispatch<SetStateAction<boolean | null>>;
+    projects: boolean | null;
+    lastPage: string;
 }
 
-const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => {
+const AboutMe = ({
+    about,
+    setAbout,
+    setHome,
+    setProjects,
+    projects,
+    lastPage,
+}: props) => {
     return (
         <>
             <div
@@ -18,21 +26,23 @@ const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => 
                     about == null
                         ? "AboutMeParentCont"
                         : about
-                        ? "AboutMeParentCont active"
-                        : "AboutMeParentCont unactive"
+                        ? lastPage === "home"
+                            ? "AboutMeParentCont active fromHome"
+                            : "AboutMeParentCont active fromProjects"
+                        : projects
+                        ? "AboutMeParentCont unactive projects"
+                        : "AboutMeParentCont unactive home"
                 }
             >
-                <div className='HomeName'>
-                    About Me
-                </div>
+                <div className="HomeName">About Me</div>
             </div>
             {about && !projects && (
                 <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
-                            setAbout(false)
-                            setHome(true)
+                            setAbout(false);
+                            setHome(true);
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
@@ -45,6 +55,7 @@ const AboutMe = ({ about, setAbout, setHome, setProjects, projects }: props) => 
                         className="ChangeButton"
                         onClick={() => {
                             setProjects(true);
+                            setAbout(false);
                         }}
                     >
                         <div className="ButtonText">{">"}</div>

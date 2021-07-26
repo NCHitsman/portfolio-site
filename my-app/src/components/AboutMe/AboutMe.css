@@ -1,25 +1,49 @@
 .AboutMeParentCont {
     min-width: 100%;
     height: 0vh;
-    background-color: rgb(178, 223, 178);
     position: fixed;
-    bottom: 0;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.AboutMeParentCont.active {
+.AboutMeParentCont.active.fromHome {
     height: 100vh;
-    animation-name: showFrom;
+    animation-name: showCont;
     animation-duration: 2s;
+    bottom: 0;
+    top: unset;
 }
 
-.AboutMeParentCont.unactive {
+.AboutMeParentCont.active.fromProjects {
+    height: 100vh;
+    animation-name: showCont;
+    animation-duration: 2s;
+    bottom: unset;
+    top: 0;
+}
+
+.AboutMeParentCont.unactive.home {
     height: 0vh;
-    animation-name: lower;
+    animation-name: hideAbout;
     animation-duration: 2s;
+    top: unset;
+    bottom: 0;
 }
 
-@keyframes showFrom {
+.AboutMeParentCont.unactive.projects {
+    height: 0vh;
+    animation-name: hideAbout;
+    animation-duration: 2s;
+    top: 0;
+    bottom: unset;
+}
+
+@keyframes showCont {
     from {
         height: 0vh;
     }
@@ -28,7 +52,7 @@
     }
 }
 
-@keyframes lower {
+@keyframes hideAbout {
     from {
         height: 100vh;
     }
@@ -36,3 +60,4 @@
         height: 0vh;
     }
 }
+

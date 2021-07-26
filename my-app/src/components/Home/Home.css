@@ -1,10 +1,51 @@
-.HomeDivParent {
+.HomeContentCont {
     min-width: 100%;
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: fixed;
-    z-index: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.HomeContentCont.showCont {
+    max-height: 100vh;
+    min-height: 100vh;
+    animation-name: showCont;
+    animation-duration: 2s;
+}
+
+.HomeContentCont.hideCont {
+    animation-name: hideCont;
+    animation-duration: 2s;
+    max-height: 0vh;
+    min-height: 0vh;
+}
+
+@keyframes showCont {
+    from {
+        max-height: 0vh;
+        min-height: 0vh;
+    }
+    to {
+        max-height: 100vh;
+        min-height: 100vh;
+    }
+}
+
+@keyframes hideCont {
+    from {
+        max-height: 100vh;
+        min-height: 100vh;
+    }
+    to {
+        max-height: 0vh;
+        min-height: 0vh;
+    }
 }
 
 .HomeCanvas {
@@ -21,7 +62,7 @@
 .HomeInfoCont {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
     min-width: 100%;
     justify-content: center;
     align-items: center;

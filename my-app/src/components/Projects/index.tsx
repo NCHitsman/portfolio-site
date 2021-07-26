@@ -4,9 +4,11 @@ import "./Projects.css";
 interface props {
     projects: boolean | null;
     setProjects: Dispatch<SetStateAction<boolean | null>>;
+    setAbout: Dispatch<SetStateAction<boolean | null>>;
+    setLastPage: Dispatch<SetStateAction<string>>;
 }
 
-const Projects = ({ projects, setProjects }: props) => {
+const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
     console.log(projects);
 
     return (
@@ -28,6 +30,8 @@ const Projects = ({ projects, setProjects }: props) => {
                         className="ChangeButton"
                         onClick={() => {
                             setProjects(false);
+                            setAbout(true);
+                            setLastPage("projects");
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
