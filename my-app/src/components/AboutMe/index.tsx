@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 import "./AboutMe.css";
+import AboutMeContent from "./AboutMeContent";
 
 interface props {
     about: boolean | null;
@@ -34,7 +35,7 @@ const AboutMe = ({
                         : "AboutMeParentCont unactive home"
                 }
             >
-                <div className="HomeName">About Me</div>
+                <AboutMeContent />
             </div>
             {about && !projects && (
                 <div className={"UpButtonCont"}>

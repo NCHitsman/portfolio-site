@@ -3,18 +3,14 @@
     height: 0vh;
     position: fixed;
     z-index: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .AboutMeParentCont.active.fromHome {
     height: 100vh;
     animation-name: showCont;
-    animation-duration: 2s;
+    animation-duration: 1s;
     bottom: 0;
     top: unset;
 }
@@ -22,7 +18,7 @@
 .AboutMeParentCont.active.fromProjects {
     height: 100vh;
     animation-name: showCont;
-    animation-duration: 2s;
+    animation-duration: 1s;
     bottom: unset;
     top: 0;
 }
@@ -30,7 +26,7 @@
 .AboutMeParentCont.unactive.home {
     height: 0vh;
     animation-name: hideAbout;
-    animation-duration: 2s;
+    animation-duration: 1s;
     top: unset;
     bottom: 0;
 }
@@ -38,7 +34,7 @@
 .AboutMeParentCont.unactive.projects {
     height: 0vh;
     animation-name: hideAbout;
-    animation-duration: 2s;
+    animation-duration: 1s;
     top: 0;
     bottom: unset;
 }
@@ -61,3 +57,12 @@
     }
 }
 
+.AboutMeContentParnetCont {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

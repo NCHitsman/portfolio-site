@@ -15,13 +15,13 @@
 .ProjectsParentCont.active {
     height: 100vh;
     animation-name: raise;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .ProjectsParentCont.unactive {
     height: 0vh;
     animation-name: lower;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 @keyframes raise {

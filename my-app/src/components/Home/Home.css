@@ -16,12 +16,12 @@
     max-height: 100vh;
     min-height: 100vh;
     animation-name: showCont;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 .HomeContentCont.hideCont {
     animation-name: hideCont;
-    animation-duration: 2s;
+    animation-duration: 1s;
     max-height: 0vh;
     min-height: 0vh;
 }
