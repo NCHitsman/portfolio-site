@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { GradientTexture } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
-import { Camera, GridHelper, Mesh } from "three";
+import { GridHelper, Mesh } from "three";
 import { range } from "lodash";
 import { memo } from "react";
 
