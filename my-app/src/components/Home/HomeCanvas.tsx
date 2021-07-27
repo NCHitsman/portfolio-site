@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { GradientTexture } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
-import { GridHelper, Mesh } from "three";
+import { Camera, GridHelper, Mesh } from "three";
 import { range } from "lodash";
 import { memo } from "react";
 
@@ -100,42 +100,53 @@ const Background = () => {
     );
 };
 
-const Mount = memo(({ x, y }: { x: number; y: number }) => {
-    const rotX = Math.random();
-    const rotZ = Math.random();
-    const arg = Math.ceil(Math.random() * 2);
+const Mount = memo(
+    ({ x, y }: { x: number; y: number }) => {
+        const rotX = Math.random();
+        const rotZ = Math.random();
+        const arg = Math.ceil(Math.random() * 2);
 
-    const ref = useRef<Mesh>(null!);
-    const ref2 = useRef<Mesh>(null!);
+        const ref = useRef<Mesh>(null!);
+        const ref2 = useRef<Mesh>(null!);
 
-    useFrame(() => {
-        ref.current.rotation.x += 0.0005;
-        ref.current.rotation.y += 0.0005;
-        ref2.current.rotation.x += 0.0005;
-        ref2.current.rotation.y += 0.0005;
-    });
+        useFrame(() => {
+            ref.current.rotation.x += 0.0005;
+            ref.current.rotation.y += 0.0005;
+            ref2.current.rotation.x += 0.0005;
+            ref2.current.rotation.y += 0.0005;
+        });
 
-    return (
-        <>
-            <mesh position={[x, 0.5, y]} rotation={[rotX, 0, rotZ]} ref={ref}>
-                <tetrahedronBufferGeometry args={[5.01, arg]} />
-                <meshBasicMaterial
-                    color="#368FD3"
-                    wireframe={true}
-                    polygonOffset={true}
-                />
-            </mesh>
-            <mesh position={[x, 0.5, y]} rotation={[rotX, 0, rotZ]} ref={ref2}>
-                <tetrahedronBufferGeometry args={[5, arg]} />
-                <meshPhongMaterial
-                    color="black"
-                    wireframe={false}
-                    polygonOffset={true}
-                />
-            </mesh>
-        </>
-    );
-}, (prevProps, nextProps) => true)
+        return (
+            <>
+                <mesh
+                    position={[x, 0.5, y]}
+                    rotation={[rotX, 0, rotZ]}
+                    ref={ref}
+                >
+                    <tetrahedronBufferGeometry args={[5.01, arg]} />
+                    <meshBasicMaterial
+                        color="#368FD3"
+                        wireframe={true}
+                        polygonOffset={true}
+                    />
+                </mesh>
+                <mesh
+                    position={[x, 0.5, y]}
+                    rotation={[rotX, 0, rotZ]}
+                    ref={ref2}
+                >
+                    <tetrahedronBufferGeometry args={[5, arg]} />
+                    <meshPhongMaterial
+                        color="black"
+                        wireframe={false}
+                        polygonOffset={true}
+                    />
+                </mesh>
+            </>
+        );
+    },
+    (prevProps, nextProps) => true
+);
 
 const MountPlane = () => {
     return (
@@ -166,16 +177,17 @@ const CameraMove = () => {
         } else if (dir === "down") {
             state.camera.rotation.x -= 0.00005;
         }
+        console.log(state.camera.rotation.x);
     });
     return null;
 };
 
-const HomeCanvas = ({home}: {home: boolean | null}) => {
+const HomeCanvas = ({ home }: { home: boolean | null }) => {
     let offset = true;
 
     return (
         <Canvas
-            className={'HomeCanvas'}
+            className={"HomeCanvas"}
             camera={{
                 fov: 75,
                 near: 0.1,
