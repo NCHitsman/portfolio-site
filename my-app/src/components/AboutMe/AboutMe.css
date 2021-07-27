@@ -138,6 +138,4 @@
     display: flex;
     min-width: 76%;
     justify-content: space-between;
-    height: 0vh;
-    overflow: hidden;
 }
