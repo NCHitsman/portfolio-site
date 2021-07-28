@@ -22,7 +22,9 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                         : "ProjectsParentCont unactive"
                 }
             >
-                <div className="HomeName">Projects</div>
+                <div className="ProjectsContentParentCont">
+                    <div className="ProjectsTitle">Projects</div>
+                </div>
             </div>
             {projects && (
                 <div className={"UpButtonCont"}>
