@@ -23,7 +23,15 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                 }
             >
                 <div className="ProjectsContentParentCont">
-                    <div className="ProjectsTitle">Projects</div>
+                    <div>
+                        <div className="ProjectsTitle">Projects</div>
+                    </div>
+                    <div>
+                        <div>Project</div>
+                        <div>Project</div>
+                        <div>Project</div>
+                        <div>Project</div>
+                    </div>
                 </div>
             </div>
             {projects && (
