@@ -9,7 +9,6 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
-    console.log(projects);
 
     return (
         <>

@@ -177,7 +177,6 @@ const CameraMove = () => {
         } else if (dir === "down") {
             state.camera.rotation.x -= 0.00005;
         }
-        console.log(state.camera.rotation.x);
     });
     return null;
 };
