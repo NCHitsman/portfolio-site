@@ -49,6 +49,7 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                                         <div>Livelink</div>
                                     </div>
                                 </div>
+                                <div>GIF</div>
                             </div>
                             <div className="ProjectCardFace Back">
                                 <div>
@@ -80,7 +81,16 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                                 flipped2 ? "ProjectCard Flipped" : "ProjectCard"
                             }
                         >
-                            <div className="ProjectCardFace Front">Project</div>
+                            <div className="ProjectCardFace Front">
+                                <div>
+                                    <div>Name</div>
+                                    <div>
+                                        <div>Github</div>
+                                        <div>Livelink</div>
+                                    </div>
+                                </div>
+                                <div>GIF</div>
+                            </div>
                             <div className="ProjectCardFace Back">
                                 <div>
                                     <div>Tech:</div>
@@ -111,7 +121,16 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                                 flipped3 ? "ProjectCard Flipped" : "ProjectCard"
                             }
                         >
-                            <div className="ProjectCardFace Front">Project</div>
+                            <div className="ProjectCardFace Front">
+                                <div>
+                                    <div>Name</div>
+                                    <div>
+                                        <div>Github</div>
+                                        <div>Livelink</div>
+                                    </div>
+                                </div>
+                                <div>GIF</div>
+                            </div>
                             <div className="ProjectCardFace Back">
                                 <div>
                                     <div>Tech:</div>
@@ -142,7 +161,16 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                                 flipped4 ? "ProjectCard Flipped" : "ProjectCard"
                             }
                         >
-                            <div className="ProjectCardFace Front">Project</div>
+                            <div className="ProjectCardFace Front">
+                                <div>
+                                    <div>Name</div>
+                                    <div>
+                                        <div>Github</div>
+                                        <div>Livelink</div>
+                                    </div>
+                                </div>
+                                <div>GIF</div>
+                            </div>
                             <div className="ProjectCardFace Back">
                                 <div>
                                     <div>Tech:</div>
