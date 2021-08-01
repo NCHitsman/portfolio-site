@@ -90,14 +90,15 @@
     backface-visibility: hidden;
     padding: 1%;
     border-radius: 15px;
+    color: black;
 }
 
 .ProjectCardFace.Front{
-    background-color: darkred;
+    background-color: pink;
 }
 
 .ProjectCardFace.Back{
-    background-color: darkblue;
+    background-color: turquoise;
     transform: rotateX( 180deg );
 }
 
