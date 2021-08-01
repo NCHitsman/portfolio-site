@@ -59,3 +59,26 @@
     font-family: Staatliches;
     max-height: 130px;
 }
+
+.ProjectsCardCont{
+    height: 70vh;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ProjectCard{
+    width: 40%;
+    height: 25vh;
+    padding: 1%;
+    margin: 1%;
+    background-color: darkred;
+}
+
+.CreatedBy{
+    color: gray;
+    font-size: 20px;
+    font-family: Staatliches;
+}

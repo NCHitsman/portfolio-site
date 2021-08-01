@@ -9,7 +9,6 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
-
     return (
         <>
             <div
@@ -25,13 +24,14 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                     <div>
                         <div className="ProjectsTitle">Projects</div>
                     </div>
-                    <div>
-                        <div>Project</div>
-                        <div>Project</div>
-                        <div>Project</div>
-                        <div>Project</div>
+                    <div className="ProjectsCardCont">
+                        <div className="ProjectCard">Project</div>
+                        <div className="ProjectCard">Project</div>
+                        <div className="ProjectCard">Project</div>
+                        <div className="ProjectCard">Project</div>
                     </div>
                 </div>
+                {/* <div className='CreatedBy'>Site Created by Noah Carmichael-Hitsman</div> */}
             </div>
             {projects && (
                 <div className={"UpButtonCont"}>
