@@ -60,6 +60,7 @@
     max-height: 130px;
 }
 
+
 .ProjectsCardCont{
     height: 70vh;
     width: 90%;
@@ -72,9 +73,32 @@
 .ProjectCard{
     width: 40%;
     height: 25vh;
-    padding: 1%;
     margin: 1%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.ProjectCard.Flipped{
+    transform: rotateX(180deg);
+}
+
+.ProjectCardFace{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.ProjectCardFace.Front{
     background-color: darkred;
+}
+
+.ProjectCardFace.Back{
+    background-color: darkblue;
+    transform: rotateX( 180deg );
 }
 
 .CreatedBy{
