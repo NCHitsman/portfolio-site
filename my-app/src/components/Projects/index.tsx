@@ -41,16 +41,32 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                                 flipped1 ? "ProjectCard Flipped" : "ProjectCard"
                             }
                         >
-                            <div className="ProjectCardFace Front">Project</div>
+                            <div className="ProjectCardFace Front">
+                                <div>
+                                    <div>Name</div>
+                                    <div>
+                                        <div>Github</div>
+                                        <div>Livelink</div>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="ProjectCardFace Back">
                                 <div>
-                                    <div></div>
-                                    <div></div>
+                                    <div>Tech:</div>
+                                    <ul>
+                                        <li>Tech 1</li>
+                                        <li>Tech 2</li>
+                                        <li>Tech 3</li>
+                                        <li>Tech 4</li>
+                                        <li>Tech 5</li>
+                                    </ul>
                                 </div>
                                 <div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <ul>
+                                        <li>Aspect 1</li>
+                                        <li>Aspect 2</li>
+                                        <li>Aspect 3</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +81,25 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                             }
                         >
                             <div className="ProjectCardFace Front">Project</div>
-                            <div className="ProjectCardFace Back">Back</div>
+                            <div className="ProjectCardFace Back">
+                                <div>
+                                    <div>Tech:</div>
+                                    <ul>
+                                        <li>Tech 1</li>
+                                        <li>Tech 2</li>
+                                        <li>Tech 3</li>
+                                        <li>Tech 4</li>
+                                        <li>Tech 5</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>Aspect 1</li>
+                                        <li>Aspect 2</li>
+                                        <li>Aspect 3</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div
                             onClick={() =>
@@ -78,7 +112,25 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                             }
                         >
                             <div className="ProjectCardFace Front">Project</div>
-                            <div className="ProjectCardFace Back">Back</div>
+                            <div className="ProjectCardFace Back">
+                                <div>
+                                    <div>Tech:</div>
+                                    <ul>
+                                        <li>Tech 1</li>
+                                        <li>Tech 2</li>
+                                        <li>Tech 3</li>
+                                        <li>Tech 4</li>
+                                        <li>Tech 5</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>Aspect 1</li>
+                                        <li>Aspect 2</li>
+                                        <li>Aspect 3</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div
                             onClick={() =>
@@ -91,7 +143,25 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                             }
                         >
                             <div className="ProjectCardFace Front">Project</div>
-                            <div className="ProjectCardFace Back">Back</div>
+                            <div className="ProjectCardFace Back">
+                                <div>
+                                    <div>Tech:</div>
+                                    <ul>
+                                        <li>Tech 1</li>
+                                        <li>Tech 2</li>
+                                        <li>Tech 3</li>
+                                        <li>Tech 4</li>
+                                        <li>Tech 5</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>Aspect 1</li>
+                                        <li>Aspect 2</li>
+                                        <li>Aspect 3</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
