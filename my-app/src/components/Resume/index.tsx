@@ -1,66 +1,64 @@
 import { Dispatch, SetStateAction } from "react";
 
-import "./AboutMe.css";
-import AboutMeContent from "./AboutMeContent";
+import "./Resume.css";
+import ResumeContent from "./ResumeContent";
 
 interface props {
     about: boolean | null;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
-    setHome: Dispatch<SetStateAction<boolean | null>>;
+    setProjects: Dispatch<SetStateAction<boolean | null>>;
+    projects: boolean | null;
     setResume: Dispatch<SetStateAction<boolean | null>>;
     resume: boolean | null;
     lastPage: string;
-    setLastPage: Dispatch<SetStateAction<string>>;
 }
 
-const AboutMe = ({
+const Resume = ({
     about,
     setAbout,
-    setHome,
+    setProjects,
+    projects,
     setResume,
     resume,
     lastPage,
-    setLastPage,
 }: props) => {
     return (
         <>
             <div
                 className={
-                    about == null
-                        ? "AboutMeParentCont"
-                        : about
-                        ? lastPage === "home"
-                            ? "AboutMeParentCont active fromHome"
-                            : "AboutMeParentCont active fromResume"
+                    resume == null
+                        ? "ResumeParentCont"
                         : resume
-                        ? "AboutMeParentCont unactive resume"
-                        : "AboutMeParentCont unactive home"
+                        ? lastPage === "about"
+                            ? "ResumeParentCont active fromAbout"
+                            : "ResumeParentCont active fromProjects"
+                        : projects
+                        ? "ResumeParentCont unactive projects"
+                        : "ResumeParentCont unactive about"
                 }
             >
-                <AboutMeContent />
+                <ResumeContent />
             </div>
-            {about && !resume && (
+            {resume && !projects && (
                 <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
-                            setAbout(false);
-                            setHome(true);
-                            setLastPage('about');
+                            setResume(false);
+                            setAbout(true);
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
                     </button>
                 </div>
             )}
-            {about && !resume && (
+            {resume && !projects && (
                 <div className={"DownButtonCont"}>
                     <button
                         className="ChangeButton"
                         onClick={() => {
-                            setResume(true);
-                            setAbout(false);
-                            setLastPage('about');
+                            setProjects(true);
+                            setResume(false);
                         }}
                     >
                         <div className="ButtonText">{">"}</div>
@@ -71,4 +69,4 @@ const AboutMe = ({
     );
 };
 
-export default AboutMe;
+export default Resume;

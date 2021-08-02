@@ -1,47 +1,47 @@
-.AboutMeParentCont {
+.ResumeParentCont {
     min-width: 100%;
     height: 0vh;
     position: fixed;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     overflow: hidden;
     display: flex;
     align-items: center;
 }
 
-.AboutMeParentCont.active.fromHome {
+.ResumeParentCont.active.fromAbout {
     height: 100vh;
-    animation-name: showAboutCont;
+    animation-name: showResumeCont;
     animation-duration: 1s;
     bottom: 0;
     top: unset;
 }
 
-.AboutMeParentCont.active.fromResume {
+.ResumeParentCont.active.fromProjects {
     height: 100vh;
-    animation-name: showAboutCont;
+    animation-name: showResumeCont;
     animation-duration: 1s;
     bottom: unset;
     top: 0;
 }
 
-.AboutMeParentCont.unactive.home {
+.ResumeParentCont.unactive.about {
     height: 0vh;
-    animation-name: hideAboutCont;
+    animation-name: hideResumeCont;
     animation-duration: 1s;
     top: unset;
     bottom: 0;
 }
 
-.AboutMeParentCont.unactive.resume {
+.ResumeParentCont.unactive.projects {
     height: 0vh;
-    animation-name: hideAboutCont;
+    animation-name: hideResumeCont;
     animation-duration: 1s;
     top: 0;
     bottom: unset;
 }
 
-@keyframes showAboutCont {
+@keyframes showResumeCont {
     from {
         height: 0vh;
     }
@@ -50,7 +50,7 @@
     }
 }
 
-@keyframes hideAboutCont {
+@keyframes hideResumeCont {
     from {
         height: 100vh;
     }
@@ -59,7 +59,7 @@
     }
 }
 
-.AboutMeContentParnetCont {
+.ResumeContentParnetCont {
     min-height: 90%;
     width: 100%;
     display: flex;
@@ -82,20 +82,20 @@
     align-items: center;
 }
 
-.AboutMeTitle {
+.ResumeTitle {
     font-size: 124px;
     font-family: Staatliches;
     max-height: 130px;
 }
 
-.AboutMeTextPictCont{
+.ResumeTextPictCont{
     display: flex;
     width: 95%;
     justify-content: space-around;
     align-items: center;
 }
 
-.AboutMeText {
+.ResumeText {
     font-size: 40px;
     font-family: Staatliches;
     text-align: center;

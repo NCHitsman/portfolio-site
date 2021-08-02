@@ -15,18 +15,18 @@
 .HomeContentCont.showCont {
     max-height: 100vh;
     min-height: 100vh;
-    animation-name: showCont;
+    animation-name: showHomeCont;
     animation-duration: 1s;
 }
 
 .HomeContentCont.hideCont {
-    animation-name: hideCont;
+    animation-name: hideHomeCont;
     animation-duration: 1s;
     max-height: 0vh;
     min-height: 0vh;
 }
 
-@keyframes showCont {
+@keyframes showHomeCont {
     from {
         max-height: 0vh;
         min-height: 0vh;
@@ -37,7 +37,7 @@
     }
 }
 
-@keyframes hideCont {
+@keyframes hideHomeCont {
     from {
         max-height: 100vh;
         min-height: 100vh;
@@ -98,5 +98,3 @@
     text-decoration: underline;
     color: #62bcb9;
 }
-
-
