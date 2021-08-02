@@ -3,7 +3,7 @@
     height: 0vh;
     position: fixed;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     align-items: center;

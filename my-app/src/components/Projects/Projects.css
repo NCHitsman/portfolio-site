@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
 }
 
 .ProjectsParentCont.active {
@@ -58,72 +58,4 @@
     font-size: 124px;
     font-family: Staatliches;
     max-height: 130px;
-}
-
-
-.ProjectsCardCont{
-    height: 70vh;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.ProjectCard{
-    width: 40%;
-    height: 25vh;
-    margin: 1%;
-    position: relative;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-}
-
-.ProjectCard.Flipped{
-    transform: rotateX(180deg);
-}
-
-.ProjectCardFace{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    padding: 1%;
-    border-radius: 15px;
-    color: black;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.ProjectCardFace.Front{
-    background-color: pink;
-}
-
-.ProjectCardFace.Back{
-    background-color: turquoise;
-    transform: rotateX( 180deg );
-}
-
-.CreatedBy{
-    color: gray;
-    font-size: 20px;
-    font-family: Staatliches;
-}
-
-.gif.planetaryGif{
-    min-height: 230.75px;
-    max-height: 230.75px;
-    min-width: 478px;
-    max-width: 478px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.ProjectCardInfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 }
