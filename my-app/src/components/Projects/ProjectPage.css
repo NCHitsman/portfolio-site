@@ -1,0 +1,86 @@
+.left {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.right {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.ProjectPageInfoParent {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 98vh;
+    color: white;
+    padding: 1vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ProjectPageInfoParent.open {
+    width: 30%;
+    animation-name: openParent;
+    animation-duration: 0.5s;
+}
+
+.ProjectPageInfoParent.closed {
+    width: 3%;
+    animation-name: hideParent;
+    animation-duration: 0.5s;
+}
+
+.ProjectPageInfoCont {
+    overflow: hidden;
+}
+
+.ProjectPageInfoCont.open {
+    width: 80%;
+    animation-name: openInfo;
+    animation-duration: 0.5s;
+}
+
+.ProjectPageInfoCont.closed {
+    width: 0%;
+    animation-name: hideInfo;
+    animation-duration: 0.5s;
+}
+
+@keyframes openParent {
+    from {
+        width: 3%;
+    }
+    to {
+        width: 30%;
+    }
+}
+
+@keyframes hideParent {
+    from {
+        width: 30%;
+    }
+    to {
+        width: 3%;
+    }
+}
+
+@keyframes openInfo {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes hideInfo {
+    from {
+        width: 80%;
+    }
+    to {
+        width: 0%;
+    }
+}

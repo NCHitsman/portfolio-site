@@ -12,11 +12,6 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
-    const [planetaryEmpires, setPlanetaryEmpires] = useState<boolean | null>(
-        null
-    );
-    const [lastProject, setLastProject] = useState<string>("");
-    const [soundLoad, setSoundLoad] = useState<boolean | null>(null);
 
     return (
         <>
