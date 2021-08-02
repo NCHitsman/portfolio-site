@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
+import ProjectPage from "./ProjectPage";
 import "./Projects.css";
+import planetaryEmpiresGif from '../../images/example.gif'
 
 interface props {
     projects: boolean | null;
@@ -10,6 +12,11 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
+    const [planetaryEmpires, setPlanetaryEmpires] = useState<boolean | null>(
+        null
+    );
+    const [lastProject, setLastProject] = useState<string>("");
+    const [soundLoad, setSoundLoad] = useState<boolean | null>(null);
 
     return (
         <>
@@ -22,7 +29,15 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                         : "ProjectsParentCont unactive"
                 }
             >
-
+                <ProjectPage
+                    name={'PlanetaryEmpires'}
+                    link1={'https://github.com/NCHitsman/Planetary-Empires'}
+                    link2={'https://planetary-empires.herokuapp.com/'}
+                    about={'About Text About Text About Text About Text About Text About Text About Text About Text About Text'}
+                    tech={['1', '2', '3', '4', '5', '6']}
+                    index={0}
+                    gif={planetaryEmpiresGif}
+                />
             </div>
             {projects && (
                 <div className={"UpButtonCont"}>
