@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import "./Projects.css";
+import PlanetaryEmpiresGif from '../../images/example.gif'
 
 interface props {
     projects: boolean | null;
@@ -42,14 +43,16 @@ const Projects = ({ projects, setProjects, setAbout, setLastPage }: props) => {
                             }
                         >
                             <div className="ProjectCardFace Front">
-                                <div>
-                                    <div>Name</div>
+                                <div className='ProjectCardInfo'>
+                                    <div className=''>Planetary Empires</div>
                                     <div>
                                         <div>Github</div>
                                         <div>Livelink</div>
                                     </div>
                                 </div>
-                                <div>GIF</div>
+                                <div>
+                                    <img className='gif planetaryGif' src={PlanetaryEmpiresGif} alt="Planetary Empires Gif" />
+                                </div>
                             </div>
                             <div className="ProjectCardFace Back">
                                 <div>

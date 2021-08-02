@@ -91,6 +91,9 @@
     padding: 1%;
     border-radius: 15px;
     color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .ProjectCardFace.Front{
@@ -106,4 +109,21 @@
     color: gray;
     font-size: 20px;
     font-family: Staatliches;
+}
+
+.gif.planetaryGif{
+    min-height: 230.75px;
+    max-height: 230.75px;
+    min-width: 478px;
+    max-width: 478px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.ProjectCardInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

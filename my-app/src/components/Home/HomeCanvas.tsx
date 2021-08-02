@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GradientTexture } from "@react-three/drei";
+import { GradientTexture, OrbitControls } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
 import { GridHelper, Mesh } from "three";
