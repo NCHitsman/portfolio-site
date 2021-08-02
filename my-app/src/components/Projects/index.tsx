@@ -13,6 +13,9 @@ interface props {
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
 
+    const [projectIndex, setProjectIndex] = useState<number>(0)
+    const max = 0
+
     return (
         <>
             <div
@@ -32,9 +35,12 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                     tech={['1', '2', '3', '4', '5', '6']}
                     index={0}
                     gif={planetaryEmpiresGif}
+                    projectIndex={projectIndex}
+                    setProjectIndex={setProjectIndex}
+                    max={max}
                 />
             </div>
-            {projects && (
+            {projectIndex === 0 && projects && (
                 <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"

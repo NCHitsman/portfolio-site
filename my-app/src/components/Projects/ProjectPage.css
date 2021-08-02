@@ -11,7 +11,6 @@
 }
 
 .ProjectPageInfoParent {
-    background-color: rgba(0, 0, 0, 0.6);
     height: 98vh;
     color: white;
     padding: 1vh;
@@ -22,12 +21,14 @@
 }
 
 .ProjectPageInfoParent.open {
+    background-color: rgba(0, 0, 0, 0.6);
     width: 30%;
     animation-name: openParent;
     animation-duration: 0.5s;
 }
 
 .ProjectPageInfoParent.closed {
+    background-color: rgba(0, 0, 0, 0);
     width: 3%;
     animation-name: hideParent;
     animation-duration: 0.5s;
@@ -51,18 +52,22 @@
 
 @keyframes openParent {
     from {
+        background-color: rgba(0, 0, 0, 0);
         width: 3%;
     }
     to {
+        background-color: rgba(0, 0, 0, 0.6);
         width: 30%;
     }
 }
 
 @keyframes hideParent {
     from {
+        background-color: rgba(0, 0, 0, 0.6);
         width: 30%;
     }
     to {
+        background-color: rgba(0, 0, 0, 0);
         width: 3%;
     }
 }
