@@ -12,8 +12,8 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
-    const [projectIndex, setProjectIndex] = useState<number>(0);
-    const [lastProjectIndex, setLastProjectIndex] = useState<number>(0)
+    const [projectIndex, setProjectIndex] = useState<number | null>(null);
+    const [lastProjectIndex, setLastProjectIndex] = useState<number | null>(0);
     const max = ProjectsArray.length - 1;
 
     return (
@@ -59,18 +59,33 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
             )}
             {projects && projectIndex !== 0 && (
                 <div className={"UpButtonCont"}>
-                    <button className="ChangeButton" onClick={() => {
-                        setProjectIndex(projectIndex - 1)
-                    }}>
+                    <button
+                        className="ChangeButton"
+                        onClick={() => {
+                            if (projectIndex !== null) {
+                                setLastProjectIndex(projectIndex);
+                                setProjectIndex(projectIndex - 1);
+                            }
+                        }}
+                    >
                         <div className="ButtonText">{"<"}</div>
                     </button>
                 </div>
             )}
             {projects && projectIndex !== max && (
                 <div className={"DownButtonCont"}>
-                    <button className="ChangeButton" onClick={() => {
-                        setProjectIndex(projectIndex + 1)
-                    }}>
+                    <button
+                        className="ChangeButton"
+                        onClick={() => {
+                            if (projectIndex === null) {
+                                setLastProjectIndex(0);
+                                setProjectIndex(1);
+                            } else {
+                                setLastProjectIndex(projectIndex);
+                                setProjectIndex(projectIndex + 1);
+                            }
+                        }}
+                    >
                         <div className="ButtonText">{">"}</div>
                     </button>
                 </div>

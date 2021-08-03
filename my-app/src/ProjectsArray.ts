@@ -1,4 +1,5 @@
 import planetaryEmpiresGif from './images/example.gif'
+import pathing from './images/pathing.gif'
 
 const ProjectsArray = [{
     name: 'PlanetaryEmpires',
@@ -13,7 +14,7 @@ const ProjectsArray = [{
     link2: 'https://soundloud-hitsman.herokuapp.com/',
     about: 'About Text About Text About Text About Text About Text About Text About Text About Text About Text',
     tech: ['1', '2', '3', '4', '5', '6'],
-    gif: planetaryEmpiresGif,
+    gif: pathing,
 }]
 
 export default ProjectsArray

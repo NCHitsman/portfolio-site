@@ -15,6 +15,7 @@
 .ProjectPageParentCont.raise {
     height: 100vh;
     bottom: 0;
+    top: unset;
     animation-name: ProjectParentShow;
     animation-duration: 1s;
 }
@@ -22,6 +23,7 @@
 .ProjectPageParentCont.lower {
     height: 100vh;
     top: 0;
+    bottom: unset;
     animation-name: ProjectParentShow;
     animation-duration: 1s;
 }
@@ -38,6 +40,7 @@
 .ProjectPageParentCont.hide.up {
     height: 0vh;
     top: 0;
+    bottom: unset;
     animation-name: ProjectParentHide;
     animation-duration: 1s;
 }
@@ -45,6 +48,7 @@
 .ProjectPageParentCont.hide.down {
     height: 0vh;
     bottom: 0;
+    top: unset;
     animation-name: ProjectParentHide;
     animation-duration: 1s;
 }
