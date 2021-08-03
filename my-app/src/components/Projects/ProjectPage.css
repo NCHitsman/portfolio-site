@@ -5,6 +5,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.ProjectPageParentCont.hide {
+    height: 0vh;
+}
+
+.ProjectPageParentCont.raise {
+    height: 100vh;
+    bottom: 0;
+    animation-name: ProjectParentShow;
+    animation-duration: 1s;
+}
+
+.ProjectPageParentCont.lower {
+    height: 100vh;
+    top: 0;
+    animation-name: ProjectParentShow;
+    animation-duration: 1s;
+}
+
+@keyframes ProjectParentShow {
+    from {
+        height: 0vh;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+.ProjectPageParentCont.hide.up {
+    height: 0vh;
+    top: 0;
+    animation-name: ProjectParentHide;
+    animation-duration: 1s;
+}
+
+.ProjectPageParentCont.hide.down {
+    height: 0vh;
+    bottom: 0;
+    animation-name: ProjectParentHide;
+    animation-duration: 1s;
+}
+
+@keyframes ProjectParentHide {
+    from {
+        height: 100vh;
+    }
+    to {
+        height: 0vh;
+    }
 }
 
 .ProjectPageInfoParent {
@@ -16,13 +67,14 @@
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    left: 0;
 }
 
 .ProjectPageInfoParent.left {
+    left: 0;
 }
 
 .ProjectPageInfoParent.right {
+    right: 0;
 }
 
 .ProjectPageInfoParent.open {

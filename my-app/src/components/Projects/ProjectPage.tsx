@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Dispatch, SetStateAction } from "react";
 import "./ProjectPage.css";
 interface props {
     name: string;
@@ -10,6 +9,7 @@ interface props {
     index: number;
     gif: any;
     projectIndex: number;
+    lastProjectIndex: number;
 }
 
 const ProjectPage = ({
@@ -21,13 +21,25 @@ const ProjectPage = ({
     index,
     gif,
     projectIndex,
+    lastProjectIndex,
 }: props) => {
     const [open, setOpen] = useState<boolean>(true);
 
     return (
-        <>
-            {index === projectIndex && (
-                <div className={"ProjectPageParentCont"}>
+
+                <div className={
+                    index === projectIndex
+                    ? projectIndex === 0
+                    ? 'ProjectPageParentCont'
+                    : lastProjectIndex < index
+                    ? 'ProjectPageParentCont raise'
+                    : 'ProjectPageParentCont lower'
+                    : projectIndex === index + 1
+                    ? 'ProjectPageParentCont hide up'
+                    : projectIndex === index - 1
+                    ? 'ProjectPageParentCont hide down'
+                    : 'ProjectPageParentCont hide'
+                }>
                     <img
                         className="BackgroundImage"
                         src={gif}
@@ -80,8 +92,6 @@ const ProjectPage = ({
                         </div>
                     </div>
                 </div>
-            )}
-        </>
     );
 };
 

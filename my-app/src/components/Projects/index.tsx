@@ -13,6 +13,7 @@ interface props {
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
     const [projectIndex, setProjectIndex] = useState<number>(0);
+    const [lastProjectIndex, setLastProjectIndex] = useState<number>(0)
     const max = ProjectsArray.length - 1;
 
     return (
@@ -37,6 +38,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                             index={i}
                             gif={ProjectObject.gif}
                             projectIndex={projectIndex}
+                            lastProjectIndex={lastProjectIndex}
                         />
                     );
                 })}
