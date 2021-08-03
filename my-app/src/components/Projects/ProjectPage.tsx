@@ -88,18 +88,22 @@ const ProjectPage = ({
                             : "ProjectPageInfoCont closed"
                     }
                 >
-                    <div className="ProjectPageNameTitle">{name}</div>
-                    <div
-                        className="ProjectPageLink"
-                        onClick={() => window.open(link1)}
-                    >
-                        Github
+                    <div className="ProjectPageNameTitleCont">
+                        <div className="ProjectPageNameTitle">{name}</div>
                     </div>
-                    <div
-                        className="ProjectPageLink"
-                        onClick={() => window.open(link2)}
-                    >
-                        Livelink
+                    <div className='ProjectPageLinkCont'>
+                        <div
+                            className="ProjectPageLink"
+                            onClick={() => window.open(link1)}
+                        >
+                            Github
+                        </div>
+                        <div
+                            className="ProjectPageLink"
+                            onClick={() => window.open(link2)}
+                        >
+                            Livelink
+                        </div>
                     </div>
                     <div className="ProjectPageAboutCont">
                         <div className="ProjectPageAboutTitle">About</div>

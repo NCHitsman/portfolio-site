@@ -2,7 +2,7 @@ import planetaryEmpiresGif from './images/example.gif'
 import pathing from './images/pathing.gif'
 
 const ProjectsArray = [{
-    name: 'PlanetaryEmpires',
+    name: 'Planetary Empires',
     link1: 'https://github.com/NCHitsman/Planetary-Empires',
     link2: 'https://planetary-empires.herokuapp.com/',
     about: 'About Text About Text About Text About Text About Text About Text About Text About Text About Text',
@@ -16,7 +16,7 @@ const ProjectsArray = [{
     tech: ['1', '2', '3', '4', '5', '6'],
     gif: pathing,
 },{
-    name: 'PlanetaryEmpires',
+    name: 'Planetary Empires',
     link1: 'https://github.com/NCHitsman/Planetary-Empires',
     link2: 'https://planetary-empires.herokuapp.com/',
     about: 'About Text About Text About Text About Text About Text About Text About Text About Text About Text',
