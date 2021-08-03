@@ -39,6 +39,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                             gif={ProjectObject.gif}
                             projectIndex={projectIndex}
                             lastProjectIndex={lastProjectIndex}
+                            key={i}
                         />
                     );
                 })}

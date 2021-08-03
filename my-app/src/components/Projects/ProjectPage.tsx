@@ -33,26 +33,26 @@ const ProjectPage = ({
 
             if (index === projectIndex) {
                 if (lastProjectIndex < index) {
-                    return "ProjectPageParentCont raise"
+                    return "ProjectPageParentCont raise";
                 } else if (lastProjectIndex > index) {
-                    return "ProjectPageParentCont lower"
+                    return "ProjectPageParentCont lower";
                 }
             }
 
-            if (projectIndex === index + 1) {
-                return "ProjectPageParentCont hide up"
-            } else if (projectIndex === index - 1) {
-                return "ProjectPageParentCont hide down"
+            if (index === lastProjectIndex) {
+                if (projectIndex === index + 1) {
+                    return "ProjectPageParentCont hide up";
+                } else if (projectIndex === index - 1) {
+                    return "ProjectPageParentCont hide down";
+                }
             }
 
-            return "ProjectPageParentCont hide"
+            return "ProjectPageParentCont hide";
         }
     };
 
     return (
-        <div
-            className={classNameGiver()}
-        >
+        <div className={classNameGiver()}>
             <img
                 className="BackgroundImage"
                 src={gif}
