@@ -11,6 +11,7 @@ interface props {
     resume: boolean | null;
     lastPage: string;
     setLastPage: Dispatch<SetStateAction<string>>;
+    projects: boolean | null;
 }
 
 const AboutMe = ({
@@ -21,6 +22,7 @@ const AboutMe = ({
     resume,
     lastPage,
     setLastPage,
+    projects
 }: props) => {
     return (
         <>
@@ -32,7 +34,7 @@ const AboutMe = ({
                         ? lastPage === "home"
                             ? "AboutMeParentCont active fromHome"
                             : "AboutMeParentCont active fromResume"
-                        : resume
+                        : resume || projects
                         ? "AboutMeParentCont unactive resume"
                         : "AboutMeParentCont unactive home"
                 }

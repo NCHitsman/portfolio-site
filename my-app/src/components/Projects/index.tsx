@@ -44,7 +44,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                     );
                 })}
             </div>
-            {projectIndex === 0 && projects && (
+            {(projectIndex === null || projectIndex === 0) && projects && (
                 <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
@@ -58,7 +58,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                     </button>
                 </div>
             )}
-            {projects && projectIndex !== 0 && (
+            {projects && projectIndex !== 0 && projectIndex !== null && (
                 <div className={"UpButtonCont"}>
                     <button
                         className="ChangeButton"
