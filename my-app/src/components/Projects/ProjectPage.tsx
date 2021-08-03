@@ -69,6 +69,18 @@ const ProjectPage = ({
                         : "ProjectPageInfoParent right closed"
                 }
             >
+                {index % 2 !== 0 && (
+                    <div className="ProjectPageTransitionButtonCont">
+                        <button
+                            className="ProjectPageTransitionButton"
+                            onClick={() =>
+                                open ? setOpen(false) : setOpen(true)
+                            }
+                        >
+                            {open ? ">" : "<"}
+                        </button>
+                    </div>
+                )}
                 <div
                     className={
                         open
@@ -76,29 +88,46 @@ const ProjectPage = ({
                             : "ProjectPageInfoCont closed"
                     }
                 >
-                    <div>{name}</div>
-                    <div onClick={() => window.open(link1)}>Github</div>
-                    <div onClick={() => window.open(link2)}>Livelink</div>
-                    <div>
-                        <div>About</div>
-                        <div>{about}</div>
+                    <div className="ProjectPageNameTitle">{name}</div>
+                    <div
+                        className="ProjectPageLink"
+                        onClick={() => window.open(link1)}
+                    >
+                        Github
                     </div>
-                    <div>
-                        <div>Tech Used</div>
-                        <ul>
+                    <div
+                        className="ProjectPageLink"
+                        onClick={() => window.open(link2)}
+                    >
+                        Livelink
+                    </div>
+                    <div className="ProjectPageAboutCont">
+                        <div className="ProjectPageAboutTitle">About</div>
+                        <div className="ProjectPageAboutText">{about}</div>
+                    </div>
+                    <div className="ProjectPageTechCont">
+                        <div className="ProjectPageTechTitle">Tech Used</div>
+                        <ul className="ProjectPageTechUl">
                             {tech.map((techName, i) => (
-                                <li key={i}>{techName}</li>
+                                <li className="ProjectPageTechLi" key={i}>
+                                    {techName}
+                                </li>
                             ))}
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <button
-                        onClick={() => (open ? setOpen(false) : setOpen(true))}
-                    >
-                        {open ? "<" : ">"}
-                    </button>
-                </div>
+                {index % 2 === 0 && (
+                    <div className="ProjectPageTransitionButtonCont">
+                        <button
+                            className="ProjectPageTransitionButton"
+                            onClick={() =>
+                                open ? setOpen(false) : setOpen(true)
+                            }
+                        >
+                            {open ? "<" : ">"}
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

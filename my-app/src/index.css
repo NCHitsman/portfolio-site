@@ -59,6 +59,7 @@ body {
     height: 40vh;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .ChangeButton:hover {
