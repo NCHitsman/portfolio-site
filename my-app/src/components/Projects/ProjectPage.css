@@ -76,10 +76,12 @@
 
 .ProjectPageInfoParent.left {
     left: 0;
+    border-right: 10px solid rgb(200, 2, 218);
 }
 
 .ProjectPageInfoParent.right {
     right: 0;
+    border-left: 10px solid rgb(200, 2, 218);
 }
 
 .ProjectPageInfoParent.open {
@@ -94,15 +96,24 @@
     width: 3%;
     animation-name: hideParent;
     animation-duration: 0.5s;
+    border-left: unset;
+    border-right: unset;
 }
 
 .ProjectPageInfoCont {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
     height: 90%;
+}
+
+.ProjectPageInfoCont.right{
+    align-items: flex-start;
+}
+
+.ProjectPageInfoCont.left{
+    align-items: flex-end;
 }
 
 .ProjectPageInfoCont.open {
@@ -144,13 +155,13 @@
         width: 0%;
     }
     to {
-        width: 80%;
+        width: 450px;
     }
 }
 
 @keyframes hideInfo {
     from {
-        width: 80%;
+        width: 450px;
     }
     to {
         width: 0%;
@@ -158,24 +169,31 @@
 }
 
 .ProjectPageNameTitleCont{
-    height: 35%;
+    max-height: 10%;
     display: flex;
     align-items: flex-start;
+    min-width: 450px;
 }
 
 .ProjectPageNameTitle{
-    text-decoration: underline;
-    font-size: 110px;
+    font-size: 60px;
     font-family: Staatliches;
-    text-align: center;
 }
 
 .ProjectPageLinkCont{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15%;
 }
 
 .ProjectPageLink{
+    font-size: 32px;
+    cursor: pointer;
+}
 
+.ProjectPageLink:hover{
+    color: rgb(84, 193, 230);
 }
 
 .ProjectPageAboutCont{

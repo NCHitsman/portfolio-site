@@ -83,15 +83,19 @@ const ProjectPage = ({
                 )}
                 <div
                     className={
-                        open
-                            ? "ProjectPageInfoCont open"
-                            : "ProjectPageInfoCont closed"
+                        index % 2 === 0
+                            ? open
+                                ? "ProjectPageInfoCont right open"
+                                : "ProjectPageInfoCont right closed"
+                            : open
+                            ? "ProjectPageInfoCont left open"
+                            : "ProjectPageInfoCont left closed"
                     }
                 >
                     <div className="ProjectPageNameTitleCont">
                         <div className="ProjectPageNameTitle">{name}</div>
                     </div>
-                    <div className='ProjectPageLinkCont'>
+                    <div className="ProjectPageLinkCont">
                         <div
                             className="ProjectPageLink"
                             onClick={() => window.open(link1)}
