@@ -1,13 +1,10 @@
-.left {
+.ProjectPageParentCont {
     position: relative;
     width: 100%;
     height: 100vh;
-}
-
-.right {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ProjectPageInfoParent {
@@ -18,6 +15,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+.ProjectPageInfoParent.left {
+}
+
+.ProjectPageInfoParent.right {
 }
 
 .ProjectPageInfoParent.open {

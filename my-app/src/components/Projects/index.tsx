@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 import ProjectPage from "./ProjectPage";
 import "./Projects.css";
-import planetaryEmpiresGif from '../../images/example.gif'
+import ProjectsArray from "../../ProjectsArray";
 
 interface props {
     projects: boolean | null;
@@ -12,9 +12,8 @@ interface props {
 }
 
 const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
-
-    const [projectIndex, setProjectIndex] = useState<number>(0)
-    const max = 0
+    const [projectIndex, setProjectIndex] = useState<number>(0);
+    const max = ProjectsArray.length - 1;
 
     return (
         <>
@@ -27,18 +26,20 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                         : "ProjectsParentCont unactive"
                 }
             >
-                <ProjectPage
-                    name={'PlanetaryEmpires'}
-                    link1={'https://github.com/NCHitsman/Planetary-Empires'}
-                    link2={'https://planetary-empires.herokuapp.com/'}
-                    about={'About Text About Text About Text About Text About Text About Text About Text About Text About Text'}
-                    tech={['1', '2', '3', '4', '5', '6']}
-                    index={0}
-                    gif={planetaryEmpiresGif}
-                    projectIndex={projectIndex}
-                    setProjectIndex={setProjectIndex}
-                    max={max}
-                />
+                {ProjectsArray.map((ProjectObject, i) => {
+                    return (
+                        <ProjectPage
+                            name={ProjectObject.name}
+                            link1={ProjectObject.link1}
+                            link2={ProjectObject.link2}
+                            about={ProjectObject.about}
+                            tech={ProjectObject.tech}
+                            index={i}
+                            gif={ProjectObject.gif}
+                            projectIndex={projectIndex}
+                        />
+                    );
+                })}
             </div>
             {projectIndex === 0 && projects && (
                 <div className={"UpButtonCont"}>
@@ -51,6 +52,24 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
+                    </button>
+                </div>
+            )}
+            {projects && projectIndex !== 0 && (
+                <div className={"UpButtonCont"}>
+                    <button className="ChangeButton" onClick={() => {
+                        setProjectIndex(projectIndex - 1)
+                    }}>
+                        <div className="ButtonText">{"<"}</div>
+                    </button>
+                </div>
+            )}
+            {projects && projectIndex !== max && (
+                <div className={"DownButtonCont"}>
+                    <button className="ChangeButton" onClick={() => {
+                        setProjectIndex(projectIndex + 1)
+                    }}>
+                        <div className="ButtonText">{">"}</div>
                     </button>
                 </div>
             )}
