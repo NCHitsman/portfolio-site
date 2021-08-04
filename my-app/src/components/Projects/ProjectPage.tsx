@@ -5,6 +5,7 @@ interface props {
     link1: string;
     link2: string;
     about: string;
+    about2: string;
     tech: string[];
     index: number;
     gif: any;
@@ -17,6 +18,7 @@ const ProjectPage = ({
     link1,
     link2,
     about,
+    about2,
     tech,
     index,
     gif,
@@ -93,7 +95,71 @@ const ProjectPage = ({
                     }
                 >
                     <div className="ProjectPageNameTitleCont">
-                        <div className="ProjectPageNameTitle">{name}</div>
+                        <div
+                            style={
+                                index % 2 === 0
+                                    ? { textAlign: "left" }
+                                    : { textAlign: "right" }
+                            }
+                            className="ProjectPageNameTitle"
+                        >
+                            {name}
+                        </div>
+                    </div>
+                    <div className="ProjectPageAboutCont">
+                        <div
+                            style={
+                                index % 2 === 0
+                                    ? {
+                                          textAlign: "left",
+                                          marginBottom: "25px",
+                                      }
+                                    : {
+                                          textAlign: "right",
+                                          marginBottom: "25px",
+                                      }
+                            }
+                            className="ProjectPageAboutText"
+                        >
+                            {about}
+                        </div>
+                        <div
+                            style={
+                                index % 2 === 0
+                                    ? { textAlign: "left" }
+                                    : { textAlign: "right" }
+                            }
+                            className="ProjectPageAboutText"
+                        >
+                            {about2}
+                        </div>
+                    </div>
+                    <div className="ProjectPageTechCont">
+                        <div
+                            style={
+                                index % 2 === 0
+                                    ? { textAlign: "left" }
+                                    : { textAlign: "right" }
+                            }
+                            className="ProjectPageTechTitle"
+                        >
+                            Tech Used
+                        </div>
+                        <ul
+                            style={
+                                index % 2 === 0
+                                    ? { textAlign: "left" }
+                                    : { textAlign: "right"}
+                            }
+                            className="ProjectPageTechUl"
+                            dir={index % 2 === 0 ? 'ltl' : 'rtl'}
+                        >
+                            {tech.map((techName, i) => (
+                                <li className="ProjectPageTechLi" key={i}>
+                                    {techName}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                     <div className="ProjectPageLinkCont">
                         <div
@@ -106,22 +172,8 @@ const ProjectPage = ({
                             className="ProjectPageLink"
                             onClick={() => window.open(link2)}
                         >
-                            Livelink
+                            Live Link
                         </div>
-                    </div>
-                    <div className="ProjectPageAboutCont">
-                        <div className="ProjectPageAboutTitle">About</div>
-                        <div className="ProjectPageAboutText">{about}</div>
-                    </div>
-                    <div className="ProjectPageTechCont">
-                        <div className="ProjectPageTechTitle">Tech Used</div>
-                        <ul className="ProjectPageTechUl">
-                            {tech.map((techName, i) => (
-                                <li className="ProjectPageTechLi" key={i}>
-                                    {techName}
-                                </li>
-                            ))}
-                        </ul>
                     </div>
                 </div>
                 {index % 2 === 0 && (

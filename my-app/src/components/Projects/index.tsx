@@ -34,6 +34,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                             link1={ProjectObject.link1}
                             link2={ProjectObject.link2}
                             about={ProjectObject.about}
+                            about2={ProjectObject.about2}
                             tech={ProjectObject.tech}
                             index={i}
                             gif={ProjectObject.gif}
