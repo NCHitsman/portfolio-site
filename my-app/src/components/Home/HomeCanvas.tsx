@@ -123,7 +123,7 @@ const Mount = memo(
                     rotation={[rotX, 0, rotZ]}
                     ref={ref}
                 >
-                    <tetrahedronBufferGeometry args={[5.01, arg]} />
+                    <tetrahedronBufferGeometry args={[5.05, arg]} />
                     <meshBasicMaterial
                         color="#368FD3"
                         wireframe={true}
