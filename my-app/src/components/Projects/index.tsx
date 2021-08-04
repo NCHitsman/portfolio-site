@@ -26,7 +26,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
             } else {
                 setSet(false);
             }
-        }, 1000);
+        }, 900);
     }, [projects, projectIndex]);
 
     return (

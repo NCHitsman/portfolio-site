@@ -94,44 +94,46 @@ const ProjectPage = ({
                             : "ProjectPageInfoCont left closed"
                     }
                 >
-                    <div className="ProjectPageNameTitleCont">
-                        <div
-                            style={
-                                index % 2 === 0
-                                    ? { textAlign: "left" }
-                                    : { textAlign: "right" }
-                            }
-                            className="ProjectPageNameTitle"
-                        >
-                            {name}
+                    <div className='ProjectPageNameAboutCollisionCont'>
+                        <div className="ProjectPageNameTitleCont">
+                            <div
+                                style={
+                                    index % 2 === 0
+                                        ? { textAlign: "left" }
+                                        : { textAlign: "right" }
+                                }
+                                className="ProjectPageNameTitle"
+                            >
+                                {name}
+                            </div>
                         </div>
-                    </div>
-                    <div className="ProjectPageAboutCont">
-                        <div
-                            style={
-                                index % 2 === 0
-                                    ? {
-                                          textAlign: "left",
-                                          marginBottom: "25px",
-                                      }
-                                    : {
-                                          textAlign: "right",
-                                          marginBottom: "25px",
-                                      }
-                            }
-                            className="ProjectPageAboutText"
-                        >
-                            {about}
-                        </div>
-                        <div
-                            style={
-                                index % 2 === 0
-                                    ? { textAlign: "left" }
-                                    : { textAlign: "right" }
-                            }
-                            className="ProjectPageAboutText"
-                        >
-                            {about2}
+                        <div className="ProjectPageAboutCont">
+                            <div
+                                style={
+                                    index % 2 === 0
+                                        ? {
+                                              textAlign: "left",
+                                              marginBottom: "25px",
+                                          }
+                                        : {
+                                              textAlign: "right",
+                                              marginBottom: "25px",
+                                          }
+                                }
+                                className="ProjectPageAboutText about1"
+                            >
+                                {about}
+                            </div>
+                            <div
+                                style={
+                                    index % 2 === 0
+                                        ? { textAlign: "left" }
+                                        : { textAlign: "right" }
+                                }
+                                className="ProjectPageAboutText about2"
+                            >
+                                {about2}
+                            </div>
                         </div>
                     </div>
                     <div className="ProjectPageTechCont">
@@ -149,10 +151,10 @@ const ProjectPage = ({
                             style={
                                 index % 2 === 0
                                     ? { textAlign: "left" }
-                                    : { textAlign: "right"}
+                                    : { textAlign: "right" }
                             }
                             className="ProjectPageTechUl"
-                            dir={index % 2 === 0 ? 'ltl' : 'rtl'}
+                            dir={index % 2 === 0 ? "ltl" : "rtl"}
                         >
                             {tech.map((techName, i) => (
                                 <li className="ProjectPageTechLi" key={i}>

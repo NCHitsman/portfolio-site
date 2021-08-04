@@ -64,7 +64,6 @@
 }
 
 .ProjectPageInfoParent {
-    height: 98vh;
     color: white;
     padding: 1vh;
     overflow: hidden;
@@ -84,20 +83,96 @@
     border-left: 10px solid rgb(12, 49, 146);
 }
 
-.ProjectPageInfoParent.open {
+.ProjectPageInfoParent.open.right {
     background-color: rgba(0, 0, 0, 0.9);
     width: 29%;
-    animation-name: openParent;
+    animation-name: openParentRight;
     animation-duration: 0.5s;
+    height: 98vh;
+    border-radius: 0px;
 }
 
-.ProjectPageInfoParent.closed {
+.ProjectPageInfoParent.open.left {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 29%;
+    animation-name: openParentLeft;
+    animation-duration: 0.5s;
+    height: 98vh;
+    border-radius: 0px;
+}
+
+.ProjectPageInfoParent.closed.left {
+    animation-name: closedParentBorderAniLeft;
+    animation-duration: 0.5s;
+    border-radius: 0px 10px 10px 0px;
     background-color: rgba(0, 0, 0, 9);
     width: 3%;
-    animation-name: hideParent;
+    animation-name: hideParentLeft;
     animation-duration: 0.5s;
-    /* border-left: unset; */
-    /* border-right: unset; */
+    height: 36vh;
+}
+
+.ProjectPageInfoParent.closed.right {
+    animation-name: closedParentBorderAniRight;
+    animation-duration: 0.5s;
+    border-radius: 10px 0px 0px 10px;
+    background-color: rgba(0, 0, 0, 9);
+    width: 3%;
+    animation-name: hideParentRight;
+    animation-duration: 0.5s;
+    height: 36vh;
+}
+
+@keyframes openParentLeft {
+    from {
+        width: 3%;
+        height: 36vh;
+        border-radius: 0px 10px 10px 0px;
+    }
+    to {
+        width: 29%;
+        height: 98vh;
+        border-radius: 0px;
+    }
+}
+
+@keyframes openParentRight {
+    from {
+        width: 3%;
+        height: 36vh;
+        border-radius: 10px 0px 0px 10px;
+    }
+    to {
+        width: 29%;
+        height: 98vh;
+        border-radius: 0px;
+    }
+}
+
+@keyframes hideParentLeft {
+    from {
+        width: 29%;
+        height: 98vh;
+        border-radius: 0px;
+    }
+    to {
+        width: 3%;
+        height: 36vh;
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+
+@keyframes hideParentRight {
+    from {
+        width: 29%;
+        height: 98vh;
+        border-radius: 0px;
+    }
+    to {
+        width: 3%;
+        height: 36vh;
+        border-radius: 10px 0px 0px 10px;
+    }
 }
 
 .ProjectPageInfoCont {
@@ -128,28 +203,6 @@
     animation-duration: 0.5s;
 }
 
-@keyframes openParent {
-    from {
-        /* background-color: rgba(0, 0, 0, 0); */
-        width: 3%;
-    }
-    to {
-        /* background-color: rgba(0, 0, 0, 0.9); */
-        width: 29%;
-    }
-}
-
-@keyframes hideParent {
-    from {
-        /* background-color: rgba(0, 0, 0, 0.9); */
-        width: 29%;
-    }
-    to {
-        /* background-color: rgba(0, 0, 0, 0); */
-        width: 3%;
-    }
-}
-
 @keyframes openInfo {
     from {
         width: 0%;
@@ -168,18 +221,23 @@
     }
 }
 
+.ProjectPageNameAboutCollisionCont {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
 .ProjectPageNameTitleCont {
-    max-height: 10%;
     display: flex;
     align-items: flex-start;
     min-width: 450px;
+    margin-bottom: 10px;
 }
 
 .ProjectPageNameTitle {
     font-size: 60px;
     font-family: Staatliches;
     width: 100%;
-    margin-bottom: 35px;
     border-bottom: 2px solid gray;
 }
 
@@ -190,6 +248,10 @@
 .ProjectPageAboutText {
     font-size: 24px;
     margin-bottom: 25px;
+}
+
+.ProjectPageAboutText.about2 {
+    margin-bottom: 15px;
 }
 
 .ProjectPageTechCont {
@@ -247,16 +309,17 @@
 }
 
 .ProjectPageTransitionButton {
-    height: 30%;
-    background-color: rgba(0, 0, 0, 0.6);
+    height: 35vh;
+    background-color: black;
     color: white;
     font-family: Staatliches;
     font-size: 100px;
     border: unset;
     border-radius: 5px;
     cursor: pointer;
+    border: 1px solid white;
 }
 
 .ProjectPageTransitionButton:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
 }

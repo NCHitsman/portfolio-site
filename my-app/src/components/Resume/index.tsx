@@ -33,7 +33,7 @@ const Resume = ({
             } else {
                 setSet(false);
             }
-        }, 1000);
+        }, 900);
     }, [resume]);
     return (
         <>

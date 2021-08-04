@@ -24,7 +24,7 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
                 } else {
                     setSet(false);
                 }
-            }, 1000);
+            }, 900);
         }
     }, [home]);
 
@@ -74,7 +74,11 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
                             }
                         }}
                     >
-                        <div className={set ? "ButtonText" : "ButtonText unset"}>{">"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {">"}
+                        </div>
                     </button>
                 </div>
             )}
