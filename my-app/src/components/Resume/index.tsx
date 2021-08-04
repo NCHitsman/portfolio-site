@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { Dispatch, SetStateAction } from "react";
 
 import "./Resume.css";
@@ -22,6 +24,17 @@ const Resume = ({
     resume,
     lastPage,
 }: props) => {
+    const [set, setSet] = useState<boolean>(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (resume) {
+                setSet(true);
+            } else {
+                setSet(false);
+            }
+        }, 1000);
+    }, [resume]);
     return (
         <>
             <div
@@ -42,26 +55,38 @@ const Resume = ({
             {resume && !projects && (
                 <div className={"UpButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            setResume(false);
-                            setAbout(true);
+                            if (set) {
+                                setResume(false);
+                                setAbout(true);
+                            }
                         }}
                     >
-                        <div className="ButtonText">{"<"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {"<"}
+                        </div>
                     </button>
                 </div>
             )}
             {resume && !projects && (
                 <div className={"DownButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            setProjects(true);
-                            setResume(false);
+                            if (set) {
+                                setProjects(true);
+                                setResume(false);
+                            }
                         }}
                     >
-                        <div className="ButtonText">{">"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {">"}
+                        </div>
                     </button>
                 </div>
             )}

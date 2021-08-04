@@ -26,6 +26,18 @@ const AboutMe = ({
     setLastPage,
     projects,
 }: props) => {
+    const [set, setSet] = useState<boolean>(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (about) {
+                setSet(true);
+            } else {
+                setSet(false);
+            }
+        }, 1000);
+    }, [about]);
+
     return (
         <>
             <div
@@ -46,28 +58,40 @@ const AboutMe = ({
             {about && !resume && (
                 <div className={"UpButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            setAbout(false);
-                            setHome(true);
-                            setLastPage("about");
+                            if (set) {
+                                setAbout(false);
+                                setHome(true);
+                                setLastPage("about");
+                            }
                         }}
                     >
-                        <div className="ButtonText">{"<"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {"<"}
+                        </div>
                     </button>
                 </div>
             )}
             {about && !resume && (
                 <div className={"DownButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
+                            if (set) {
                                 setResume(true);
                                 setAbout(false);
                                 setLastPage("about");
+                            }
                         }}
                     >
-                        <div className="ButtonText">{">"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {">"}
+                        </div>
                     </button>
                 </div>
             )}

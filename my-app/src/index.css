@@ -54,7 +54,6 @@ body {
 .ChangeButton {
     font-size: 100px;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
     font-family: Staatliches;
     height: 40vh;
     border: none;
@@ -62,13 +61,32 @@ body {
     cursor: pointer;
 }
 
+.ChangeButton.unset {
+    font-size: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: Staatliches;
+    height: 40vh;
+    border: none;
+    border-radius: 5px;
+    cursor: unset;
+}
+
 .ChangeButton:hover {
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.ChangeButton.unset:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .ButtonText {
     color: white;
     opacity: 1;
+}
+
+.ButtonText.unset {
+    color: rgb(105, 105, 105);
+    opacity: 0.5;
 }
 
 .BackgroundImage {

@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import ProjectPage from "./ProjectPage";
 import "./Projects.css";
 import ProjectsArray from "../../ProjectsArray";
+import { useEffect } from "react";
 
 interface props {
     projects: boolean | null;
@@ -15,6 +16,18 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
     const [projectIndex, setProjectIndex] = useState<number | null>(null);
     const [lastProjectIndex, setLastProjectIndex] = useState<number | null>(0);
     const max = ProjectsArray.length - 1;
+
+    const [set, setSet] = useState<boolean>(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (projects) {
+                setSet(true);
+            } else {
+                setSet(false);
+            }
+        }, 1000);
+    }, [projects]);
 
     return (
         <>
@@ -62,33 +75,45 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
             {projects && projectIndex !== 0 && projectIndex !== null && (
                 <div className={"UpButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            if (projectIndex !== null) {
-                                setLastProjectIndex(projectIndex);
-                                setProjectIndex(projectIndex - 1);
+                            if (set) {
+                                if (projectIndex !== null) {
+                                    setLastProjectIndex(projectIndex);
+                                    setProjectIndex(projectIndex - 1);
+                                }
                             }
                         }}
                     >
-                        <div className="ButtonText">{"<"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {"<"}
+                        </div>
                     </button>
                 </div>
             )}
             {projects && projectIndex !== max && (
                 <div className={"DownButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            if (projectIndex === null) {
-                                setLastProjectIndex(0);
-                                setProjectIndex(1);
-                            } else {
-                                setLastProjectIndex(projectIndex);
-                                setProjectIndex(projectIndex + 1);
+                            if (set) {
+                                if (projectIndex === null) {
+                                    setLastProjectIndex(0);
+                                    setProjectIndex(1);
+                                } else {
+                                    setLastProjectIndex(projectIndex);
+                                    setProjectIndex(projectIndex + 1);
+                                }
                             }
                         }}
                     >
-                        <div className="ButtonText">{">"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {">"}
+                        </div>
                     </button>
                 </div>
             )}

@@ -12,6 +12,22 @@ interface props {
 }
 
 const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
+    const [set, setSet] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (home === null) {
+            setSet(true);
+        } else {
+            setTimeout(() => {
+                if (home) {
+                    setSet(true);
+                } else {
+                    setSet(false);
+                }
+            }, 1000);
+        }
+    }, [home]);
+
     return (
         <>
             <HomeCanvas home={home} />
@@ -49,14 +65,16 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
             {(home || home === null) && (
                 <div className={"DownButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            setHome(false);
-                            setAbout(true);
-                            setLastPage("home");
+                            if (set) {
+                                setHome(false);
+                                setAbout(true);
+                                setLastPage("home");
+                            }
                         }}
                     >
-                        <div className="ButtonText">{">"}</div>
+                        <div className={set ? "ButtonText" : "ButtonText unset"}>{">"}</div>
                     </button>
                 </div>
             )}
