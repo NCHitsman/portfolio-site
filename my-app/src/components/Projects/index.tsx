@@ -27,7 +27,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                 setSet(false);
             }
         }, 1000);
-    }, [projects]);
+    }, [projects, projectIndex]);
 
     return (
         <>
@@ -61,14 +61,21 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
             {(projectIndex === null || projectIndex === 0) && projects && (
                 <div className={"UpButtonCont"}>
                     <button
-                        className="ChangeButton"
+                        className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
-                            setProjects(false);
-                            setResume(true);
-                            setLastPage("projects");
+                            if (set) {
+                                setProjects(false);
+                                setResume(true);
+                                setLastPage("projects");
+                                setSet(false)
+                            }
                         }}
                     >
-                        <div className="ButtonText">{"<"}</div>
+                        <div
+                            className={set ? "ButtonText" : "ButtonText unset"}
+                        >
+                            {"<"}
+                        </div>
                     </button>
                 </div>
             )}
@@ -82,6 +89,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                                     setLastProjectIndex(projectIndex);
                                     setProjectIndex(projectIndex - 1);
                                 }
+                                setSet(false)
                             }
                         }}
                     >
@@ -106,6 +114,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                                     setLastProjectIndex(projectIndex);
                                     setProjectIndex(projectIndex + 1);
                                 }
+                                setSet(false)
                             }
                         }}
                     >
