@@ -30,7 +30,7 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
 
     return (
         <>
-            <HomeCanvas home={home} />
+            <HomeCanvas />
             <div
                 className={
                     home === null

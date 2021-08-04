@@ -181,7 +181,7 @@ const CameraMove = () => {
     return null;
 };
 
-const HomeCanvas = ({ home }: { home: boolean | null }) => {
+const HomeCanvas = () => {
     let offset = true;
 
     return (
