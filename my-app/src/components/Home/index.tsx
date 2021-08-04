@@ -1,6 +1,8 @@
 import HomeCanvas from "./HomeCanvas";
 import "./Home.css";
 import { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 interface props {
     home: boolean | null;

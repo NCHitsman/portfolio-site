@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 
 import "./AboutMe.css";
@@ -22,7 +24,7 @@ const AboutMe = ({
     resume,
     lastPage,
     setLastPage,
-    projects
+    projects,
 }: props) => {
     return (
         <>
@@ -48,7 +50,7 @@ const AboutMe = ({
                         onClick={() => {
                             setAbout(false);
                             setHome(true);
-                            setLastPage('about');
+                            setLastPage("about");
                         }}
                     >
                         <div className="ButtonText">{"<"}</div>
@@ -60,9 +62,9 @@ const AboutMe = ({
                     <button
                         className="ChangeButton"
                         onClick={() => {
-                            setResume(true);
-                            setAbout(false);
-                            setLastPage('about');
+                                setResume(true);
+                                setAbout(false);
+                                setLastPage("about");
                         }}
                     >
                         <div className="ButtonText">{">"}</div>
