@@ -22,7 +22,7 @@ const ProjectsArray = [{
     name: 'Portfolio Site',
     link1: 'https://github.com/NCHitsman/portfolio-site',
     link2: 'https://nchitsman.github.io/portfolio-site/',
-    about: 'A Person Portfolio site I made for my Job Search. I created a ThreeJS background and used a "Acordian Div" system to create the sectioning you see here!',
+    about: 'A Person Portfolio site I made for my Job Search. I created a ThreeJS background and used a "Accordion Div" system to create the sectioning you see here!',
     about2: 'I enjoyed making the use of React-Three/Fiber and Typescript to make a very cool ThreeJS scene I am super proud of. The Project pages you are viewing now, is completly scalable, making it very easy to add a new Project!',
     tech: [ 'Typescript', 'React', 'ThreeJS', 'CSS', 'Github Pages'],
     gif: tour,
