@@ -84,10 +84,10 @@
 .AboutMeTitle {
     font-size: 124px;
     font-family: Staatliches;
-    max-height: 130px;
+    max-height: 13.874066168623266vh;
 }
 
-.AboutMeTextPictCont{
+.AboutMeTextPictCont {
     display: flex;
     width: 95%;
     justify-content: space-around;
@@ -98,7 +98,7 @@
 
 .AboutMeText {
     font-size: 35px;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     text-align: center;
     max-width: 60%;
     min-width: 60%;
@@ -110,7 +110,7 @@
 
 .SelfImage {
     border-radius: 50vh;
-    width: 648px;
-    height: 632.7px;
+    width: 33.75vw;
+    height: 67.52401280683031vh;
     border: 3px solid black;
 }

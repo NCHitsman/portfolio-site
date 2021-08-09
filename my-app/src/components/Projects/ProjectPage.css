@@ -192,7 +192,7 @@
 }
 
 .ProjectPageInfoCont.open {
-    width: 450px;
+    width: 23.4375vw;
     animation-name: openInfo;
     animation-duration: 0.5s;
 }
@@ -208,13 +208,13 @@
         width: 0%;
     }
     to {
-        width: 450px;
+        width: 23.4375vw;
     }
 }
 
 @keyframes hideInfo {
     from {
-        width: 450px;
+        width: 23.4375vw;
     }
     to {
         width: 0%;
@@ -230,7 +230,7 @@
 .ProjectPageNameTitleCont {
     display: flex;
     align-items: flex-start;
-    min-width: 450px;
+    min-width: 23.4375vw;
     margin-bottom: 10px;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .ProjectPageAboutCont {
-    min-width: 450px;
+    min-width: 23.4375vw;
 }
 
 .ProjectPageAboutText {
@@ -255,8 +255,8 @@
 }
 
 .ProjectPageTechCont {
-    min-width: 450px;
-    max-width: 450px;
+    min-width: 23.4375vw;
+    max-width: 23.4375vw;
     color: rgb(232, 230, 227);
 }
 
@@ -270,8 +270,8 @@
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
-    min-width: 412px;
-    max-width: 412px;
+    min-width: 21.4583vw;
+    max-width: 21.4583vw;
     list-style-type: square;
     margin-top: 5px;
 }
@@ -279,15 +279,15 @@
 .ProjectPageTechLi {
     margin-left: 0px;
     font-size: 26px;
-    max-width: 150px;
+    max-width: 7.8125vw;
 }
 
 .ProjectPageLinkCont {
     display: flex;
     justify-content: space-evenly;
     height: 15%;
-    min-width: 450px;
-    margin-top: 15px;
+    min-width: 23.4375vw;
+    margin-top: 1.6vh;
 }
 
 .ProjectPageLink {
