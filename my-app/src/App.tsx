@@ -28,6 +28,7 @@ function App() {
                 lastPage={lastPage}
                 setLastPage={setLastPage}
                 projects={projects}
+                setProjects={setProjects}
             />
             <Resume
                 about={about}
@@ -43,6 +44,7 @@ function App() {
                 setProjects={setProjects}
                 setResume={setResume}
                 setLastPage={setLastPage}
+                setAbout={setAbout}
             />
         </div>
     );

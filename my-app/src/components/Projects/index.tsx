@@ -10,9 +10,10 @@ interface props {
     setProjects: Dispatch<SetStateAction<boolean | null>>;
     setResume: Dispatch<SetStateAction<boolean | null>>;
     setLastPage: Dispatch<SetStateAction<string>>;
+    setAbout: Dispatch<SetStateAction<boolean | null>>;
 }
 
-const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
+const Projects = ({ projects, setProjects, setResume, setLastPage, setAbout }: props) => {
     const [projectIndex, setProjectIndex] = useState<number | null>(null);
     const [lastProjectIndex, setLastProjectIndex] = useState<number | null>(0);
     const max = ProjectsArray.length - 1;
@@ -65,7 +66,7 @@ const Projects = ({ projects, setProjects, setResume, setLastPage }: props) => {
                         onClick={() => {
                             if (set) {
                                 setProjects(false);
-                                setResume(true);
+                                setAbout(true);
                                 setLastPage("projects");
                                 setSet(false)
                             }

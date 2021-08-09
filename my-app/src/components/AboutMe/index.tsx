@@ -14,6 +14,7 @@ interface props {
     lastPage: string;
     setLastPage: Dispatch<SetStateAction<string>>;
     projects: boolean | null;
+    setProjects: Dispatch<SetStateAction<boolean | null>>;
 }
 
 const AboutMe = ({
@@ -25,6 +26,7 @@ const AboutMe = ({
     lastPage,
     setLastPage,
     projects,
+    setProjects
 }: props) => {
     const [set, setSet] = useState<boolean>(false);
 
@@ -42,20 +44,20 @@ const AboutMe = ({
         <>
             <div
                 className={
-                    about == null
+                    about === null
                         ? "AboutMeParentCont"
                         : about
                         ? lastPage === "home"
                             ? "AboutMeParentCont active fromHome"
                             : "AboutMeParentCont active fromResume"
-                        : resume || projects
+                        : projects
                         ? "AboutMeParentCont unactive resume"
                         : "AboutMeParentCont unactive home"
                 }
             >
                 <AboutMeContent />
             </div>
-            {about && !resume && (
+            {about && !projects && (
                 <div className={"UpButtonCont"}>
                     <button
                         className={set ? "ChangeButton" : "ChangeButton unset"}
@@ -75,13 +77,13 @@ const AboutMe = ({
                     </button>
                 </div>
             )}
-            {about && !resume && (
+            {about && !projects && (
                 <div className={"DownButtonCont"}>
                     <button
                         className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
                             if (set) {
-                                setResume(true);
+                                setProjects(true);
                                 setAbout(false);
                                 setLastPage("about");
                             }
