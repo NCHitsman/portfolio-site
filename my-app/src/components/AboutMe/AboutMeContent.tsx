@@ -18,16 +18,16 @@ const AboutMeContent = () => {
                     <br></br>I decided to further my education by attending App
                     Academy’s 24-week, 1000+ hour Software Engineering program
                     where I honed my expertise in Typescript, React, Redux, CSS,
-                    PostgreSQL, Python, Flask, along with many other
+                    Python, Flask, along with many other
                     technologies. Given my strong technical experience, I am
                     confident in my ability to contribute from day one as a
                     Full-Stack Developer on any Project.
                 </div>
-                <img
-                    className="SelfImage"
-                    src={image}
-                    alt="Noah Carmichael-Hitsman"
-                />
+                    <img
+                        className="SelfImage"
+                        src={image}
+                        alt="Noah Carmichael-Hitsman"
+                    />
             </div>
         </div>
     );
