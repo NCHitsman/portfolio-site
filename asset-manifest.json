@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/portfolio-site/static/css/main.405432cf.chunk.css",
-    "main.js": "/portfolio-site/static/js/main.2abc8e4c.chunk.js",
-    "main.js.map": "/portfolio-site/static/js/main.2abc8e4c.chunk.js.map",
+    "main.css": "/portfolio-site/static/css/main.dfb0fbd2.chunk.css",
+    "main.js": "/portfolio-site/static/js/main.3c2addcb.chunk.js",
+    "main.js.map": "/portfolio-site/static/js/main.3c2addcb.chunk.js.map",
     "runtime-main.js": "/portfolio-site/static/js/runtime-main.48acac4c.js",
     "runtime-main.js.map": "/portfolio-site/static/js/runtime-main.48acac4c.js.map",
-    "static/js/2.4d56038b.chunk.js": "/portfolio-site/static/js/2.4d56038b.chunk.js",
-    "static/js/2.4d56038b.chunk.js.map": "/portfolio-site/static/js/2.4d56038b.chunk.js.map",
+    "static/js/2.c1fff6e9.chunk.js": "/portfolio-site/static/js/2.c1fff6e9.chunk.js",
+    "static/js/2.c1fff6e9.chunk.js.map": "/portfolio-site/static/js/2.c1fff6e9.chunk.js.map",
     "index.html": "/portfolio-site/index.html",
-    "static/css/main.405432cf.chunk.css.map": "/portfolio-site/static/css/main.405432cf.chunk.css.map",
-    "static/js/2.4d56038b.chunk.js.LICENSE.txt": "/portfolio-site/static/js/2.4d56038b.chunk.js.LICENSE.txt",
+    "static/css/main.dfb0fbd2.chunk.css.map": "/portfolio-site/static/css/main.dfb0fbd2.chunk.css.map",
+    "static/js/2.c1fff6e9.chunk.js.LICENSE.txt": "/portfolio-site/static/js/2.c1fff6e9.chunk.js.LICENSE.txt",
     "static/media/example.3352130f.gif": "/portfolio-site/static/media/example.3352130f.gif",
     "static/media/hitsman.fba13ceb.jpg": "/portfolio-site/static/media/hitsman.fba13ceb.jpg",
     "static/media/song.6a1361a8.gif": "/portfolio-site/static/media/song.6a1361a8.gif",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.48acac4c.js",
-    "static/js/2.4d56038b.chunk.js",
-    "static/css/main.405432cf.chunk.css",
-    "static/js/main.2abc8e4c.chunk.js"
+    "static/js/2.c1fff6e9.chunk.js",
+    "static/css/main.dfb0fbd2.chunk.css",
+    "static/js/main.3c2addcb.chunk.js"
   ]
 }
