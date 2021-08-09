@@ -60,6 +60,16 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
                     >
                         LinkedIn
                     </div>
+                    <div
+                        className="HomeLink"
+                        onClick={() => {
+                            window.open(
+                                "https://drive.google.com/file/d/1wMHuGNecNLmpFnzpA3qhdJexv6S3UUU5/view?usp=sharing"
+                            );
+                        }}
+                    >
+                        Resume
+                    </div>
                 </div>
             </div>
             {(home || home === null) && (
