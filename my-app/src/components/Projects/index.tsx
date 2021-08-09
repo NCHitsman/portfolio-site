@@ -8,12 +8,11 @@ import { useEffect } from "react";
 interface props {
     projects: boolean | null;
     setProjects: Dispatch<SetStateAction<boolean | null>>;
-    setResume: Dispatch<SetStateAction<boolean | null>>;
     setLastPage: Dispatch<SetStateAction<string>>;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
 }
 
-const Projects = ({ projects, setProjects, setResume, setLastPage, setAbout }: props) => {
+const Projects = ({ projects, setProjects, setLastPage, setAbout }: props) => {
     const [projectIndex, setProjectIndex] = useState<number | null>(null);
     const [lastProjectIndex, setLastProjectIndex] = useState<number | null>(0);
     const max = ProjectsArray.length - 1;

@@ -13,6 +13,16 @@ body {
     margin: 0;
 }
 
+:root {
+    font-size: 100%;
+}
+
+@media only screen and (max-width: 1600px) {
+    :root {
+        font-size: 75%;
+    }
+}
+
 #root {
     min-height: 100vh;
 }
@@ -52,7 +62,7 @@ body {
 }
 
 .ChangeButton {
-    font-size: 100px;
+    font-size: 6.25rem;
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Staatliches;
     height: 40vh;
@@ -62,7 +72,7 @@ body {
 }
 
 .ChangeButton.unset {
-    font-size: 100px;
+    font-size: 6.25rem;
     background-color: rgba(0, 0, 0, 0.1);
     font-family: Staatliches;
     height: 40vh;

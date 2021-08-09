@@ -17,7 +17,7 @@
     top: unset;
 }
 
-.AboutMeParentCont.active.fromResume {
+.AboutMeParentCont.active.fromProjects {
     height: 100vh;
     animation-name: showAboutCont;
     animation-duration: 1s;
@@ -33,7 +33,7 @@
     bottom: 0;
 }
 
-.AboutMeParentCont.unactive.resume {
+.AboutMeParentCont.unactive.projects {
     height: 0vh;
     animation-name: hideAboutCont;
     animation-duration: 1.005s;
@@ -82,7 +82,7 @@
 }
 
 .AboutMeTitle {
-    font-size: 124px;
+    font-size: 7.75rem;
     font-family: Staatliches;
     max-height: 13.874066168623266vh;
 }
@@ -97,7 +97,7 @@
 }
 
 .AboutMeText {
-    font-size: 35px;
+    font-size: 2.188rem;
     font-family: "Open Sans";
     text-align: center;
     max-width: 60%;

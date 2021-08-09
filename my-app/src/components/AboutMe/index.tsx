@@ -9,8 +9,6 @@ interface props {
     about: boolean | null;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
     setHome: Dispatch<SetStateAction<boolean | null>>;
-    setResume: Dispatch<SetStateAction<boolean | null>>;
-    resume: boolean | null;
     lastPage: string;
     setLastPage: Dispatch<SetStateAction<string>>;
     projects: boolean | null;
@@ -21,8 +19,6 @@ const AboutMe = ({
     about,
     setAbout,
     setHome,
-    setResume,
-    resume,
     lastPage,
     setLastPage,
     projects,
@@ -49,9 +45,9 @@ const AboutMe = ({
                         : about
                         ? lastPage === "home"
                             ? "AboutMeParentCont active fromHome"
-                            : "AboutMeParentCont active fromResume"
+                            : "AboutMeParentCont active fromProjects"
                         : projects
-                        ? "AboutMeParentCont unactive resume"
+                        ? "AboutMeParentCont unactive projects"
                         : "AboutMeParentCont unactive home"
                 }
             >
