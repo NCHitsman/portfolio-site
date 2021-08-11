@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GradientTexture, OrbitControls } from "@react-three/drei";
+import { GradientTexture } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
 import { GridHelper, Mesh } from "three";
@@ -198,7 +198,6 @@ const HomeCanvas = () => {
             <Background />
             <Plane />
             <Sun />
-            {/* <OrbitControls /> */}
             {range(50).map((a, i) => {
                 offset ? (offset = false) : (offset = true);
                 return <Mount key={a} x={i * 5 - 125} y={offset ? -65 : -70} />;

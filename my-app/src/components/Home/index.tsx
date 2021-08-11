@@ -4,7 +4,6 @@ import { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { useCallback } from "react";
 
 interface props {
     home: boolean | null;
