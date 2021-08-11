@@ -3,16 +3,26 @@ import "./Home.css";
 import { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRef } from "react";
+import { useCallback } from "react";
 
 interface props {
     home: boolean | null;
     setHome: Dispatch<SetStateAction<boolean | null>>;
     setAbout: Dispatch<SetStateAction<boolean | null>>;
     setLastPage: Dispatch<SetStateAction<string>>;
+    setCurrentDownButton: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>;
 }
 
-const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
+const Home = ({
+    home,
+    setHome,
+    setAbout,
+    setLastPage,
+    setCurrentDownButton,
+}: props) => {
     const [set, setSet] = useState<boolean>(false);
+    const homeDownButton = useRef<HTMLButtonElement>(null!);
 
     useEffect(() => {
         if (home === null) {
@@ -27,6 +37,12 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
             }, 900);
         }
     }, [home]);
+
+    useEffect(() => {
+        if (set) {
+            setCurrentDownButton(homeDownButton.current);
+        }
+    }, [setCurrentDownButton, set]);
 
     return (
         <>
@@ -75,6 +91,7 @@ const Home = ({ home, setHome, setAbout, setLastPage }: props) => {
             {(home || home === null) && (
                 <div className={"DownButtonCont"}>
                     <button
+                        ref={homeDownButton}
                         className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
                             if (set) {

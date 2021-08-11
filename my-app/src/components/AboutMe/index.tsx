@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useRef } from "react";
 import { Dispatch, SetStateAction } from "react";
 
 import "./AboutMe.css";
@@ -13,6 +14,8 @@ interface props {
     setLastPage: Dispatch<SetStateAction<string>>;
     projects: boolean | null;
     setProjects: Dispatch<SetStateAction<boolean | null>>;
+    setCurrentDownButton: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>;
+    setCurrentUpButton: React.Dispatch<React.SetStateAction<HTMLButtonElement | null>>;
 }
 
 const AboutMe = ({
@@ -22,9 +25,13 @@ const AboutMe = ({
     lastPage,
     setLastPage,
     projects,
-    setProjects
+    setProjects,
+    setCurrentDownButton,
+    setCurrentUpButton,
 }: props) => {
     const [set, setSet] = useState<boolean>(false);
+    const aboutDownButton = useRef<HTMLButtonElement>(null!);
+    const aboutUpButton = useRef<HTMLButtonElement>(null!)
 
     useEffect(() => {
         setTimeout(() => {
@@ -35,6 +42,13 @@ const AboutMe = ({
             }
         }, 900);
     }, [about]);
+
+    useEffect(() => {
+        if (set) {
+            setCurrentUpButton(aboutUpButton.current);
+            setCurrentDownButton(aboutDownButton.current);
+        }
+    }, [set, setCurrentDownButton, setCurrentUpButton]);
 
     return (
         <>
@@ -56,6 +70,7 @@ const AboutMe = ({
             {about && !projects && (
                 <div className={"UpButtonCont"}>
                     <button
+                    ref={aboutUpButton}
                         className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
                             if (set) {
@@ -76,6 +91,7 @@ const AboutMe = ({
             {about && !projects && (
                 <div className={"DownButtonCont"}>
                     <button
+                        ref={aboutDownButton}
                         className={set ? "ChangeButton" : "ChangeButton unset"}
                         onClick={() => {
                             if (set) {
