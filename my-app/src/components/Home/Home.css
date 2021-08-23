@@ -71,7 +71,7 @@
 }
 
 .HomeName {
-    font-size: 9.25rem;
+    font-size: 15.2vh;
     font-family: Staatliches;
     color: white;
     border-bottom: 1.6008537886873vh solid white;
@@ -87,7 +87,7 @@
 }
 
 .HomeLink {
-    font-size: 6.25rem;
+    font-size: 10vh;
     font-family: Staatliches;
     cursor: pointer;
     /* text-decoration: underline; */
