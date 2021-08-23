@@ -29,18 +29,24 @@ const ProjectPage = ({
 }: props) => {
     const [open, setOpen] = useState<boolean>(true);
 
-    const keydownHandler = useCallback((e: any) => {
-        console.log(e)
-        if (e.code === 'Space') {
-            setOpen(!open)
-        }
-    }, [open])
+    const keydownHandler = useCallback(
+        (e: KeyboardEvent) => {
+            if (
+                e.code === "Space" &&
+                (index === projectIndex ||
+                    (index === 0 && projectIndex === null))
+            ) {
+                setOpen(!open);
+            }
+        },
+        [open, index, projectIndex]
+    );
 
     useEffect(() => {
-        window.addEventListener('keydown', keydownHandler)
+        window.addEventListener("keydown", keydownHandler);
 
-        return () => window.removeEventListener('keydown',keydownHandler)
-    }, [keydownHandler])
+        return () => window.removeEventListener("keydown", keydownHandler);
+    }, [keydownHandler]);
 
     const classNameGiver = () => {
         if (lastProjectIndex !== null) {
@@ -109,7 +115,7 @@ const ProjectPage = ({
                             : "ProjectPageInfoCont left closed"
                     }
                 >
-                    <div className='ProjectPageNameAboutCollisionCont'>
+                    <div className="ProjectPageNameAboutCollisionCont">
                         <div className="ProjectPageNameTitleCont">
                             <div
                                 style={
