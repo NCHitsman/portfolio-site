@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useCallback } from "react";
 import { useState } from "react";
 import "./ProjectPage.css";
 interface props {
@@ -26,6 +28,19 @@ const ProjectPage = ({
     lastProjectIndex,
 }: props) => {
     const [open, setOpen] = useState<boolean>(true);
+
+    const keydownHandler = useCallback((e: any) => {
+        console.log(e)
+        if (e.code === 'Space') {
+            setOpen(!open)
+        }
+    }, [open])
+
+    useEffect(() => {
+        window.addEventListener('keydown', keydownHandler)
+
+        return () => window.removeEventListener('keydown',keydownHandler)
+    }, [keydownHandler])
 
     const classNameGiver = () => {
         if (lastProjectIndex !== null) {
