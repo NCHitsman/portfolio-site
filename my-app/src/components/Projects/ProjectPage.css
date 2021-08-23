@@ -291,7 +291,7 @@
 }
 
 .ProjectPageLink {
-    font-size: 3.5rem;
+    font-size: 5.7vh;
     cursor: pointer;
     text-decoration: underline;
     font-family: Staatliches;
@@ -313,7 +313,7 @@
     background-color: black;
     color: white;
     font-family: Staatliches;
-    font-size: 6.25rem;
+    font-size: 10.4vh;
     border: unset;
     border-radius: 5px;
     cursor: pointer;

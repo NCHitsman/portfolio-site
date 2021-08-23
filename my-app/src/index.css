@@ -56,7 +56,7 @@ body {
 }
 
 .ChangeButton {
-    font-size: 6.25rem;
+    font-size: 10.4vh;
     background-color: rgba(0, 0, 0, 0.6);
     font-family: Staatliches;
     height: 40vh;
@@ -66,7 +66,7 @@ body {
 }
 
 .ChangeButton.unset {
-    font-size: 6.25rem;
+    font-size: 10.4vh;
     background-color: rgba(0, 0, 0, 0.1);
     font-family: Staatliches;
     height: 40vh;
