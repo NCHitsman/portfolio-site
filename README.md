@@ -6,7 +6,7 @@
 
 ## Home Page
 
-### Used ThreeJS and three-react/fiber to make a custom background.
+### Used Three.js and three-react/fiber to make a custom background.
 
 #
 

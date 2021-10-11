@@ -8,7 +8,7 @@ const ProjectsArray = [{
     link2: 'https://planetary-empires.herokuapp.com/',
     about: 'Planetary Empires is an expansion game for Warhammer 40,000 released by Games Workshop. The game rules and accompanying map board and pieces allow you to wage a campaign across a planetary-size landscape. It is designed to assist you in running evocative, narrative-driven campaigns.',
     about2: 'This site helps you organize players, systems, and maps, allowing you to run a Planetary Empires game all in one place!',
-    tech: ['Javascript', 'React', 'Redux', 'Sequelize', 'Express', 'ThreeJS'],
+    tech: ['Javascript', 'React', 'Redux', 'Sequelize', 'Express', 'Three.js'],
     gif: planetaryEmpiresGif,
 },{
     name: 'SoundLoud',
@@ -22,9 +22,9 @@ const ProjectsArray = [{
     name: 'Portfolio Site',
     link1: 'https://github.com/NCHitsman/portfolio-site',
     link2: 'https://nchitsman.github.io/portfolio-site/',
-    about: 'A Person Portfolio site I made for my Job Search. I created a ThreeJS background and used a "Accordion Div" system to create the sectioning you see here!',
-    about2: 'I enjoyed making the use of React-Three/Fiber and Typescript to make a very cool ThreeJS scene I am super proud of. The Project pages you are viewing now, is completly scalable, making it very easy to add a new Project!',
-    tech: [ 'Typescript', 'React', 'ThreeJS', 'CSS', 'Github Pages'],
+    about: 'A Person Portfolio site I made for my Job Search. I created a Three.js background and used a "Accordion Div" system to create the sectioning you see here!',
+    about2: 'I enjoyed making the use of React-Three/Fiber and Typescript to make a very cool Three.js scene I am super proud of. The Project pages you are viewing now, is completly scalable, making it very easy to add a new Project!',
+    tech: [ 'Typescript', 'React', 'Three.js', 'CSS', 'Github Pages'],
     gif: tour,
 }]
 
