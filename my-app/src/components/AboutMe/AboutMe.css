@@ -68,6 +68,8 @@
     align-items: center;
     overflow: hidden;
     color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .PhotoFavsCont {
@@ -97,7 +99,7 @@
 }
 
 .AboutMeText {
-    font-size: 3.45vh;
+    font-size: 3.75vh;
     font-family: "Open Sans";
     text-align: center;
     max-width: 60%;
@@ -111,7 +113,17 @@
 
 .SelfImage {
     border-radius: 50vh;
-    width: 35%;
+    width: 25%;
     height: 35%;
     border: 3px solid black;
 }
+
+@media (max-width: 1920px) {
+    .SelfImage {
+        width: 35%;
+    }
+
+    .AboutMeText {
+        font-size: 3.45vh;
+    }
+  }

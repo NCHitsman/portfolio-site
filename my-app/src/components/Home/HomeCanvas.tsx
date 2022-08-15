@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GradientTexture } from "@react-three/drei";
+import { GradientTexture, OrbitControls } from "@react-three/drei";
 import "./Home.css";
 import { useRef } from "react";
 import { GridHelper, Mesh } from "three";
@@ -12,7 +12,7 @@ const Grid = () => {
     const grid = useRef<GridHelper>(null!);
 
     useFrame(() => {
-        if (grid.current.position.z > 1) {
+        if (grid.current.position.z > 1.35) {
             grid.current.position.z = 0;
         } else {
             grid.current.position.z += speed;
@@ -22,7 +22,7 @@ const Grid = () => {
     return (
         <gridHelper
             ref={grid}
-            args={[190, 170, "#580360", "#580360"]}
+            args={[240, 170, "#580360", "#580360"]}
             position={[0, 0, 0]}
         />
     );
@@ -45,7 +45,7 @@ const Plane = () => {
             position={[0, -0.05, 0]}
             rotation={[-(Math.PI / 2), 0, 0]}
         >
-            <planeBufferGeometry args={[190, 170]} />
+            <planeBufferGeometry args={[240, 170]} />
             <meshBasicMaterial color="#0C345A" />
         </mesh>
     );
@@ -82,7 +82,7 @@ const Sun = () => {
 const Background = () => {
     return (
         <mesh position={[0, 25, -155]}>
-            <planeBufferGeometry args={[575, 75]} />
+            <planeBufferGeometry args={[655, 75]} />
             <meshBasicMaterial>
                 <GradientTexture
                     stops={[0, 0.3, 0.4, 0.8, 1]}
@@ -101,7 +101,7 @@ const Background = () => {
 };
 
 const Mount = memo(
-    ({ x, y }: { x: number; y: number }) => {
+    ({ x, y, z }: { x: number; y: number; z: number }) => {
         const rotX = Math.random();
         const rotZ = Math.random();
         const arg = Math.ceil(Math.random() * 2);
@@ -119,7 +119,7 @@ const Mount = memo(
         return (
             <>
                 <mesh
-                    position={[x, 0.5, y]}
+                    position={[x, z, y]}
                     rotation={[rotX, 0, rotZ]}
                     ref={ref}
                 >
@@ -131,7 +131,7 @@ const Mount = memo(
                     />
                 </mesh>
                 <mesh
-                    position={[x, 0.5, y]}
+                    position={[x, z, y]}
                     rotation={[rotX, 0, rotZ]}
                     ref={ref2}
                 >
@@ -151,7 +151,7 @@ const Mount = memo(
 const MountPlane = () => {
     return (
         <mesh position={[0, 0.05, -60]} rotation={[-(Math.PI / 2), 0, 0]}>
-            <planeBufferGeometry args={[190, 15]} />
+            <planeBufferGeometry args={[270, 15]} />
             <meshBasicMaterial>
                 <GradientTexture
                     stops={[0, 0.5, 1]}
@@ -198,9 +198,9 @@ const HomeCanvas = () => {
             <Background />
             <Plane />
             <Sun />
-            {range(50).map((a, i) => {
+            {range(80).map((a, i) => {
                 offset ? (offset = false) : (offset = true);
-                return <Mount key={a} x={i * 5 - 125} y={offset ? -65 : -70} />;
+                return <Mount key={a} x={i * 4 - 155} y={offset ? -65 : -70} z={offset ? 0.5 : 2} />;
             })}
             <MountPlane />
             <CameraMove />
