@@ -79,7 +79,7 @@ const Home = ({
                         className="HomeLink"
                         onClick={() => {
                             window.open(
-                                "https://drive.google.com/file/d/1vRnDB63LG8yy-NbQWt_r0md7w73nTDAN/view"
+                                "https://drive.google.com/file/d/1vRnDB63LG8yy-NbQWt_r0md7w73nTDAN/view?usp=sharing"
                             );
                         }}
                     >
